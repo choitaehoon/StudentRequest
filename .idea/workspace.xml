@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4493083-3db5-4697-ad19-1667731d25e9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentQuestion_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentQuestion_war_exploded/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/StudentQuestion_war_exploded/membership.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StudentQuestion_war_exploded/membership.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/membership.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/membership.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="133">
+              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -47,26 +46,17 @@
       <file leaf-file-name="membership.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/membership.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+            <state relative-caret-position="170">
+              <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentQuestion.iml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudentQuestion.iml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudentQuestion.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            <state relative-caret-position="251">
+              <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -171,7 +161,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.membership.jsp">
+  <component name="RunManager" selected="JavaScript Debug.login.jsp">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -462,9 +452,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.login.jsp" />
         <item itemvalue="Tomcat Server.membership.jsp" />
         <item itemvalue="Tomcat Server.login.jsp (2)" />
-        <item itemvalue="JavaScript Debug.login.jsp" />
         <item itemvalue="Tomcat Server.login.jsp (1)" />
         <item itemvalue="Tomcat Server.login.jsp" />
       </list>
@@ -489,12 +479,12 @@
       <workItem from="1531730401879" duration="4043000" />
       <workItem from="1531797061039" duration="175000" />
       <workItem from="1531799049017" duration="946000" />
-      <workItem from="1531825854784" duration="1125000" />
+      <workItem from="1531825854784" duration="2552000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15625000" />
+    <option name="totallyTimeSpent" value="17052000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -518,17 +508,17 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" x="-13" y="562" width="1536" height="239" id="Run" order="2" visible="true" weight="0.32872927" />
+      <window_info anchor="bottom" x="-13" y="562" width="1536" height="239" id="Run" order="2" weight="0.32872927" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Database Console" order="12" visible="true" weight="0.32872927" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1985677" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="12" visible="true" weight="0.32965517" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -705,34 +695,117 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://DATABASE/bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135</OriginalElement>
+          <nodes>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_SYS_FOREIGN</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.COLUMN_PRIVILEGES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.GLOBAL_VARIABLES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_SYS_VIRTUAL</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.TRIGGERS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.ROUTINES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.COLUMNS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.GLOBAL_STATUS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.ENGINES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_SYS_TABLESTATS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.USER_PRIVILEGES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.PARAMETERS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_CMP_PER_INDEX</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.COLLATIONS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_SYS_INDEXES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_SYS_TABLES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_FT_INDEX_CACHE</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_METRICS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_CMPMEM_RESET</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_BUFFER_PAGE</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.CHARACTER_SETS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.TABLE_PRIVILEGES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_LOCK_WAITS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_FT_CONFIG</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.VIEWS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.KEY_COLUMN_USAGE</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.SESSION_VARIABLES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_SYS_FOREIGN_COLS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.SCHEMATA</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.PROCESSLIST</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_CMP</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_FT_DELETED</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.FILES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.OPTIMIZER_TRACE</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.PARTITIONS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_SYS_FIELDS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.TABLE_CONSTRAINTS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_TRX</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.TABLESPACES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.COLLATION_CHARACTER_SET_APPLICABILITY</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.TABLES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_CMP_RESET</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_LOCKS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_CMPMEM</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_FT_INDEX_TABLE</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_SYS_DATAFILES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_FT_BEING_DELETED</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.SESSION_STATUS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.PROFILING</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_BUFFER_POOL_STATS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_CMP_PER_INDEX_RESET</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_SYS_TABLESPACES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.STATISTICS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_SYS_COLUMNS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.REFERENTIAL_CONSTRAINTS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.SCHEMA_PRIVILEGES</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.PLUGINS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.EVENTS</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_TEMP_TABLE_INFO</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_BUFFER_PAGE_LRU</node>
+            <node x="" y="">bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135.VIEW:information_schema.INNODB_FT_DEFAULT_STOPWORD</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.15688405797101448" x="1292.0" y="1360.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="51" lean-forward="true" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bc3c3de1-c1ce-4eaa-a1bc-c88a4f1d1135/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/membership.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/StudentQuestion.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state relative-caret-position="251">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/membership.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
         </state>
       </provider>
     </entry>
