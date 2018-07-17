@@ -46,8 +46,7 @@
         <div class="form-group"><label>이름</label> <input type="text" class="form-control" name="name"
                                                          value="<%= name %>"/></div>
         <div class="form-group"><label>비밀번호1</label>
-            66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 90 91 92 93 94 95 96 <input
-                    type="password" class="form-control" name="password1"/></div>
+            <input type="password" class="form-control" name="password1"/></div>
         <div class="form-group"><label>비밀번호2</label> <input type="password" class="form-control" name="password2"/>
         </div>
         <div class="form-group"><label>이메일</label> <input type="email" class="form-control" name="email"
