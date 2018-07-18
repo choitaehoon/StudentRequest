@@ -40,7 +40,7 @@ body {
 		<H1>Student Request</H1>
 		<hr />
 
-		<h1>로그인</h1>
+<!-- 		<h1>로그인</h1> -->
 
 		<form method="post">
 			<div class="form-group">
@@ -58,7 +58,7 @@ body {
 				<i class="icon-ok icon-white"></i> 로그인
 			</button>
 
-			<button type="button" class="btn btn-default">
+			<button type="button" class="btn btn-default" onclick="location.href='member/paswrdFind.jsp'">
 				<i class="icon-search"></i> 비밀번호 찾기
 			</button>
 				

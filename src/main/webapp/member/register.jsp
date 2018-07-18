@@ -92,6 +92,10 @@ input.form-control, select.form-control {
 			<button type="submit" class="btn btn-primary">
 				<i class="glyphicon glyphicon-ok"></i> 회원가입
 			</button>
+			
+			<a href="login.jsp" class="btn btn-default">
+            <i class="glyphicon glyphicon-home"></i> 홈 </a>
+		
 		</form>
 		<hr />
 		<% if (에러메시지 != null) { %>
