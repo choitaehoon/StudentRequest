@@ -1,4 +1,4 @@
-package studentRequest.dto;
+package studentR.dto;
 
 public class Department {
 	int departmenId;
