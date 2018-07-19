@@ -75,7 +75,7 @@ input.form-control, select.form-control {
 				<i class="glyphicon glyphicon-ok"></i> 찾기
 			</button>
 			
-			<a href="login.jsp" class="btn btn-default">
+			<a href="../login.jsp" class="btn btn-default">
             <i class="glyphicon glyphicon-home"></i> 홈 </a>
 			
 		</form>
