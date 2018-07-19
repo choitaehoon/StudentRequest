@@ -2,7 +2,7 @@
  
  
 <h3>디비 설계</h3>
-<img src="https://github.com/choitaehoon/StudentRequest/blob/master/img/db.png">
+<img src="https://github.com/choitaehoon/StudentRequest/blob/taehoon/img/db2.png">
 
 <h3>참가자 구성</h3>
   <ul>
