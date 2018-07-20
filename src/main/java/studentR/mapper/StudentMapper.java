@@ -5,9 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import studentR.dto.Student;
 
 @Mapper
-public interface StudentMapper {
-
+public interface StudentMapper
+{
     void insert(Student student);
     void update(Student student);
-
 }
