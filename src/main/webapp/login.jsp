@@ -52,20 +52,17 @@ body {
 				<label>비밀번호</label>
 				<input type="password" class="form-control" name="password" />
 	         </div>	
-	        
-		
 			<button type="submit" class="btn btn-primary">
 				<i class="icon-ok icon-white"></i> 로그인
 			</button>
 
 			<button type="button" class="btn btn-default" onclick="location.href='member/paswrdFind.jsp'">
-				<i class="icon-search"></i> 비밀번호 찾기
+				<span class="icon-search"></span> 비밀번호 찾기
 			</button>
 				
-			<button type="button" class="btn btn-default" onclick="location.href='member/register.jsp'">
-				<i class="icon-user"></i> 회원가입
-			</button>
-				
+<!-- 			<button type="button" class="btn btn-default" onclick="location.href='member/register.jsp'"> -->
+				<a href="member/register.jsp"><i class="icon-user"></i> 회원가입</a>
+<!-- 			</button> -->
 			
 		</form>
 
