@@ -80,37 +80,37 @@ input.form-control, select.form-control {
 	<div id=center class="container main">
 		<h1>회원가입</h1>
 		<hr />
-		<form method="post">
+		<form action="member/paswrdFind" method="post">
 
 			<div class="form-group">
 				<label>사용자 아이디</label> <input type="text" class="form-control"
-					name="userid" value="<%=userid%>" />
+					name="studentId" />
 			</div>
 			<div class="form-group">
 				<label>이름</label> <input type="text" class="form-control"
-					name="name" value="<%=name%>" />
+					name="studentName" />
 			</div>
 			<div class="form-group">
 				<label>비밀번호1</label> <input type="password" class="form-control"
-					name="password1" />
+					name="password" />
 			</div>
 			<div class="form-group">
 				<label>비밀번호2</label> <input type="password" class="form-control"
-					name="password2" />
+					name="password" />
 			</div>
 			
 			<div class="form-group">
 				<label>학년</label> 
-				<input type="number" name="grade" class="form-control" value="<%=grade%>"/>
+				<input type="number" name="grade" class="form-control"/>
 			</div>
 			
 			<div class="form-group">
 				<label>이메일</label> <input type="email" class="form-control"
-					name="email" value="<%=email%>" />
+					name="email"  />
 			</div>
 			
 			<div class="form-group">
-				<label>학과</label> <select class="form-control" name="department">
+				<label>학과</label> <select class="form-control" name="departmentId">
 					<option value="1">소프트웨어공학과</option>
 					<option value="2">컴퓨터공학과</option>
 					<option value="3">정보통신공학과</option>
