@@ -5,13 +5,10 @@
 <mapper namespace="studentR.mapper.StudentMapper">
 
 	<insert id="insert" useGeneratedKeys="true" keyProperty="studentId">
-<<<<<<< HEAD
+
 		INSERT Student (studentId,studentName, password, year, email, departmentId, userType )
 		VALUES (#{studentId}, #{studentName}, #{password}, #{year}, #{email}, #{departmentId}, #{userType})
-=======
-		INSERT Student (studentName, password, grade, email, departmentId, userType )
-		VALUES (#{studentName}, #{password}, #{grade}, #{email}, #{departmentId}, #{userType})
->>>>>>> 3c59f0a109eba87a67e6149ef7afe204a73b799f
+
 	</insert>
 
 	<update id="update">
