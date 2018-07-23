@@ -60,9 +60,8 @@ body {
 				<span class="icon-search"></span> 비밀번호 찾기
 			</button>
 				
-<!-- 			<button type="button" class="btn btn-default" onclick="location.href='member/register.jsp'"> -->
-				<a href="member/register.jsp"><i class="icon-user"></i> 회원가입</a>
-<!-- 			</button> -->
+ 			<button type="button" class="btn btn-default" onclick="location.href='member/register.jsp'">회원가입
+		    </button> 
 			
 		</form>
 
