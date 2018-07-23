@@ -4,6 +4,10 @@
 
 <mapper namespace="studentR.mapper.StudentMapper">
 
+    <select id="findOne" resultType="Student">
+     SELECT * FROM Student WHERE studentId =#{studentId}
+    </select>
+    
 	<insert id="insert" useGeneratedKeys="true" keyProperty="studentId">
 
 		INSERT Student (studentId,studentName, password, year, email, departmentId, userType )
@@ -13,10 +17,13 @@
 
 	<update id="update">
 		UPDATE Student SET
-		departmentId = #{departmentId},
-		password= #{password},
-		year = #{year}
-		WHERE id = #{id}
+		 departmentId = #{departmentId},
+		 password= #{password},
+		 year = #{year}
+		WHERE studentId = #{studnetId}
 	</update>
 	
+	<delete id="delete">
+	 DELETE FROM Student WHERE studentId=#{studentId}
+	</delete>
 </mapper>

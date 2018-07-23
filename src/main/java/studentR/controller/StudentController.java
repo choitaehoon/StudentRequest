@@ -14,7 +14,7 @@ import studentR.mapper.DepartmentMapper;
 import studentR.mapper.StudentMapper;
 
 @Controller
-@RequestMapping("/member")
+@RequestMapping("/memeber")
 public class StudentController {
 
 	@Autowired StudentMapper studentMapper;
@@ -26,7 +26,7 @@ public class StudentController {
 		List<Department> departments=departmentMapper.findAll();
 		model.addAttribute("student", student);
 		model.addAttribute("departments", departments);
-		return "register";
+		return "memeber/register";
 
 	}
 	@RequestMapping(value="create", method=RequestMethod.POST)
