@@ -1,13 +1,14 @@
 package net.student.dto;
 
 public class Department {
-	int departmenId;
+	int departmentId;
 	String departmentName;
-	public int getDepartmenId() {
-		return departmenId;
+
+	public int getDepartmentId() {
+		return departmentId;
 	}
-	public void setDepartmenId(int departmenId) {
-		this.departmenId = departmenId;
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
 	}
 	public String getDepartmentName() {
 		return departmentName;
