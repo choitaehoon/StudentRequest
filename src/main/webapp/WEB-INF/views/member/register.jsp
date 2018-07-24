@@ -1,45 +1,48 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<c:url var="R" value="/" />
 <%
-	request.setCharacterEncoding("UTF-8");
-	String userid = "";
-	String name = "";
-	String password1;
-	String password2;
-	int grade=1;
-	String email = "";
-	int department;
-	int userType;
-	String 에러메시지 = null;
+request.setCharacterEncoding("UTF-8");
+String userid = "";
+String name = "";
+String password1;
+String password2;
+int grade=1;
+String email = "";
+int department;
+int userType;
+String 에러메시지 = null;
 
-	if (request.getMethod().equals("POST")) {
-		userid = request.getParameter("userid");
-		name = request.getParameter("name");
-		password1 = request.getParameter("password1");
-		password2 = request.getParameter("password2");
-		String s1 = request.getParameter("grade");
-		grade = Integer.parseInt(s1);
-		email = request.getParameter("email");
-		String s2 = request.getParameter("department");
-		department = Integer.parseInt(s2);
-		String s3 = request.getParameter("userType");
-		userType= Integer.parseInt(s3);
-		
-		if (userid == null || userid.length() == 0)
-			에러메시지 = "사용자 아이디를 입력하세요";
-		else if (name == null || name.length() == 0)
-			에러메시지 = "이름을 입력하세요";
-		else if (password1 == null || password1.length() == 0)
-			에러메시지 = "비밀번호1을 입력하세요";
-		else if (password2 == null || password2.length() == 0)
-			에러메시지 = "비밀번호2를 입력하세요";
-		else if (password1.equals(password2) == false)
-			에러메시지 = "비밀번호 불일치";
-		else if (email == null || email.length() == 0)
-			에러메시지 = "이메일 주소를 입력하세요";
-		
-	}
+if (request.getMethod().equals("POST")) {
+	userid = request.getParameter("userid");
+	name = request.getParameter("name");
+	password1 = request.getParameter("password1");
+	password2 = request.getParameter("password2");
+	String s1 = request.getParameter("grade");
+	grade = Integer.parseInt(s1);
+	email = request.getParameter("email");
+	String s2 = request.getParameter("department");
+	department = Integer.parseInt(s2);
+	String s3 = request.getParameter("userType");
+	userType= Integer.parseInt(s3);
+	
+	if (userid == null || userid.length() == 0)
+		에러메시지 = "사용자 아이디를 입력하세요";
+	else if (name == null || name.length() == 0)
+		에러메시지 = "이름을 입력하세요";
+	else if (password1 == null || password1.length() == 0)
+		에러메시지 = "비밀번호1을 입력하세요";
+	else if (password2 == null || password2.length() == 0)
+		에러메시지 = "비밀번호2를 입력하세요";
+	else if (password1.equals(password2) == false)
+		에러메시지 = "비밀번호 불일치";
+	else if (email == null || email.length() == 0)
+		에러메시지 = "이메일 주소를 입력하세요";
+	
+}
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,48 +83,55 @@ input.form-control, select.form-control {
 	<div id=center class="container main">
 		<h1>회원가입</h1>
 		<hr />
-		<form action="member/paswrdFind.jsp" method="post">
+		<form:form method="post" modelAttribute="student">
 
 			<div class="form-group">
-				<label>사용자 아이디</label> <input type="text" class="form-control"
-					name="studentId" />
+				<label>사용자 아이디</label>
+				<form:input type="text" path="studentId"  class="form-control" />
+				
 			</div>
 			<div class="form-group">
-				<label>이름</label> <input type="text" class="form-control"
-					name="studentName" />
+				<label>이름</label>
+				<form:input type="text" path="studentName" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label>비밀번호1</label> <input type="password" class="form-control"
-					name="password" />
+				<label>비밀번호1</label>
+				<form:input type="password" path="password" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label>비밀번호2</label> <input type="password" class="form-control"
-					name="password" />
+				<label>비밀번호2</label>
+				<form:input type="password" path="password" class="form-control" />
 			</div>
+
+			<div class="form-group">
+				<label>학년</label>
+				<form:input type="number" path="grade" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label>이메일</label>
+				<form:input type="email" class="form-control" path="email" />
+			</div>
+
+			<div class="form-group">
+				<label>학과</label> 
+				<form:select path="departmentId" class="form-control"
+                   itemValue="departmentId" itemLabel="departmentName" items="${ departments }" />
+				
+<%-- 				<form:select class="form-control" path="departmentId"> --%>
+<!-- 					<option value="1">소프트웨어공학과</option> -->
+<!-- 					<option value="2">컴퓨터공학과</option> -->
+<!-- 					<option value="3">정보통신공학과</option> -->
+<!-- 					<option value="4">글로컬IT공학과</option> -->
+<%-- 				</form:select> --%>
+			</div>
+
 			
 			<div class="form-group">
-				<label>학년</label> 
-				<input type="number" name="grade" class="form-control"/>
-			</div>
-			
-			<div class="form-group">
-				<label>이메일</label> <input type="email" class="form-control"
-					name="email"  />
-			</div>
-			
-			<div class="form-group">
-				<label>학과</label> <select class="form-control" name="departmentId">
-					<option value="1">소프트웨어공학과</option>
-					<option value="2">컴퓨터공학과</option>
-					<option value="3">정보통신공학과</option>
-					<option value="4">글로컬IT공학과</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<label>교수</label><input type="radio" name="userType" value="0" />
+				<label>교수</label> <input type="radio" name="userType" value="0" />
 				<label>학생</label><input type="radio" name="userType" value="1" />
 			</div>
-			
+
 			<button type="submit" class="btn btn-primary">
 				<i class="glyphicon glyphicon-ok"></i> 회원가입
 			</button>
@@ -130,18 +140,9 @@ input.form-control, select.form-control {
 				class="glyphicon glyphicon-home"></i> 홈
 			</a>
 
-		</form>
-		<hr />
-		<%
-			if (에러메시지 != null) {
-		%>
-		<div class="alert alert-danger">
-			로그인 실패:
-			<%=에러메시지%>
-		</div>
-		<%
-			}
-		%>
+		</form:form>
+
+
 	</div>
 </body>
 </html>
