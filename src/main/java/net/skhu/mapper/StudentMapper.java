@@ -7,6 +7,8 @@ import net.student.dto.Student;
 @Mapper
 public interface StudentMapper
 {
-    void insert(Student student);
+	Student findOne(int studentId);
+	void insert(Student student);
     void update(Student student);
+    void delete(int studentId);
 }
