@@ -1,5 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,12 +56,12 @@ body {
 				<i class="icon-ok icon-white"></i> 로그인
 			</button>
 
-			<button type="button" class="btn btn-default" onclick="location.href='member/paswrdFind.jsp'">
+			<button type="button" class="btn btn-default" onclick="location.href='member/paswrdFind'">
 				<span class="icon-search"></span> 비밀번호 찾기
 			</button>
 				
 			<button type="button" class="btn btn-default" onclick="location.href='member/register'">
-<!-- 				<a href="member/register"><i class="icon-user"></i> 회원가입</a> -->
+
 					<i class="icon-user"></i>회원가입
 			</button>
 			
