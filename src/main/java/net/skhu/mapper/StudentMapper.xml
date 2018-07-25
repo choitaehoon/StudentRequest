@@ -5,8 +5,8 @@
 <mapper namespace="net.skhu.mapper.StudentMapper">
 
 	<insert id="insert" useGeneratedKeys="true" keyProperty="studentId">
-		INSERT Student (studentId,studentName, password, grade, email, departmentId, userType )
-		VALUES (#{studentId},#{studentName}, #{password}, #{grade}, #{email}, #{departmentId}, #{userType})
+		INSERT Student (id,name, password, grade, email, departmentId, userType )
+		VALUES (#{id},#{name}, #{password}, #{grade}, #{email}, #{departmentId}, #{userType})
 	</insert>
 
 	<update id="update">
@@ -19,6 +19,6 @@
 	
 	
 	<select id="loginCheck" resultType="int">
-		select count(*) from student where studentId = #{studentId};
+		select count(*) from student where id = #{id};
 	</select>
 </mapper>

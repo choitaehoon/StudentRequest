@@ -20,12 +20,12 @@
 	margin-left: -150px;
 }
 
-body {
-
+body 
+{
 	font-family: 굴림체;
 }
 
- input.form-control, select.form-control { width: 200px; }
+ input.form-control, select.form-control { width: 270px; }
 
 </style>
 
@@ -34,23 +34,29 @@ body {
 </head>
 
 <body>
-
 	<div id=center class="container main">
 		<H3>SKHU.DO</H3>
 		<H1>Student Request</H1>
 		<hr />
-<!-- 		<h1>로그인</h1> -->
 
-		<form method="post" action="">
+		<form method="post" action="member/check">
+			<div class="form-group">
+				<label>교수</label> <input type="radio" name="userType" value="0" />
+				<label>학생</label><input type="radio" name="userType" value="1" />
+			</div>
+			
 			<div class="form-group">
 				<label>아이디 </label>
-			   <input type="text"  class="form-control" name="loginId" value="" />
+			   <input type="text"  class="form-control" name="studentId" 
+			   	placeholder="(학번 또는 교수아이디를 입력하세요)"/>
 		    </div>
 			
 			<div class="form-group">
 				<label>비밀번호</label>
-				<input type="password" class="form-control" name="password" />
+				<input type="password" class="form-control" name="password" 
+				placeholder="비밀번호를 입력해 주세요"/>
 	         </div>	
+	         
 			<button type="submit" class="btn btn-primary">
 				<i class="icon-ok icon-white"></i> 로그인
 			</button>

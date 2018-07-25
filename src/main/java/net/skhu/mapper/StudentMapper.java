@@ -9,5 +9,5 @@ public interface StudentMapper
 {
     void insert(Student student);
     void update(Student student);
-    int loginCheck(int studentId);
+    int loginCheck(int id);
 }

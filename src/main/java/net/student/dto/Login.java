@@ -1,13 +1,14 @@
 package net.student.dto;
 
-public class Professor {
-	int id; //교번
-	String name; //?���?
-	int departmentId; //?��과번?��
-	int classId; //강의번호
-	String password; //비�?번호
-	String email; //?��메일
-	int userType; //0�? 교수
+public class Login 
+{
+	int id;
+	String name;
+	String password;
+	int grade;
+	String email;
+	int departmentId;
+	int userType;
 	
 	public int getId() {
 		return id;
@@ -21,23 +22,17 @@ public class Professor {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getDepartmentId() {
-		return departmentId;
-	}
-	public void setDepartmentId(int departmentId) {
-		this.departmentId = departmentId;
-	}
-	public int getClassId() {
-		return classId;
-	}
-	public void setClassId(int classId) {
-		this.classId = classId;
-	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public int getGrade() {
+		return grade;
+	}
+	public void setGrade(int grade) {
+		this.grade = grade;
 	}
 	public String getEmail() {
 		return email;
@@ -45,13 +40,18 @@ public class Professor {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public int getDepartmentId() {
+		return departmentId;
+	}
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
+	}
 	public int getUserType() {
 		return userType;
 	}
 	public void setUserType(int userType) {
 		this.userType = userType;
 	}
-
-
-
+	
+	
 }

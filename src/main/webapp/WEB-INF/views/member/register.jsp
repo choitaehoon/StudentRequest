@@ -17,7 +17,8 @@
 
 
 <style type="text/css">
-#center {
+#center 
+{
 	position: absolute;
 	top: 30%;
 	left: 50%;
@@ -28,7 +29,8 @@
 	margin-left: -150px;
 }
 
-body {
+body 
+{
 	font-family: 굴림체;
 }
 
@@ -36,13 +38,15 @@ input.form-control, select.form-control {
 	width: 200px;
 }
 </style>
+
 <script>
 function checkId(){
-    var id = $('#studentId').val();
+    var id = $('#id').val();
+    var userType = $("input[name='userType']:checked").val();
     $.ajax({
         url:'identify',
         type:'post',
-        data:{id:id},
+        data:{id:id,userType:userType},
         success:function(data){
             if(data == 0){
                alert("사용할 수 있습니다");               
@@ -69,13 +73,13 @@ function checkId(){
 
 			<div class="form-group">
 				<label>사용자 아이디</label>
-				<form:input type="text" path="studentId"  class="form-control" name="studentId"/>
+				<form:input type="text" path="id"  class="form-control" name="id"/>
 				<input type="button" value="아이디중복체크" onclick="checkId();"></input>
 			</div>
 			
 			<div class="form-group">
 				<label>이름</label>
-				<form:input type="text" path="studentName" class="form-control" />
+				<form:input type="text" path="name" class="form-control" />
 			</div>
 			
 			<div class="form-group">
