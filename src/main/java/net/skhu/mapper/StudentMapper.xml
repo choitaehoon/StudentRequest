@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.skhu.mapper.StudentMapper">
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="studentId">
+		INSERT Student (studentId,studentName, password, grade, email, departmentId, userType )
+		VALUES (#{studentId},#{studentName}, #{password}, #{grade}, #{email}, #{departmentId}, #{userType})
+	</insert>
+
+	<update id="update">
+		UPDATE Student SET
+		departmentId = #{departmentId},
+		password= #{password},
+		year = #{year}
+		WHERE id = #{id}
+	</update>
+	
+	
+	<select id="loginCheck" resultType="int">
+		select count(*) from student where studentId = #{studentId};
+	</select>
+</mapper>
