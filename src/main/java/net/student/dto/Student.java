@@ -1,8 +1,8 @@
 package net.student.dto;
 
 public class Student {
-	int studentId; //?���?
-	String studentName; //?��?��?���?
+	int id; //?���?
+	String name; //?��?��?���?
 	int departmentId; //?��과번?��
 	String subject; //과목
 	String password; //비�?번호
@@ -12,17 +12,18 @@ public class Student {
 	String departmentName;
 
 
-	public int getStudentId() {
-		return studentId;
+
+	public int getId() {
+		return id;
 	}
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getStudentName() {
-		return studentName;
+	public String getName() {
+		return name;
 	}
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public int getDepartmentId() {
 		return departmentId;

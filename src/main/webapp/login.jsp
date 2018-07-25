@@ -37,7 +37,7 @@ body {
 <body>
 
 	<div id=center class="container main">
-		<H3>SKHU.DO</H3>
+		<H3>SKHU.DO.it</H3>
 		<H1>Student Request</H1>
 		<hr />
 <!-- 		<h1>로그인</h1> -->
@@ -64,9 +64,6 @@ body {
 
 					<i class="icon-user"></i>회원가입
 			</button>
-			
+			                                                                                          
 		</form>
-
-	</div>
-</body>
-</html>
+                             
