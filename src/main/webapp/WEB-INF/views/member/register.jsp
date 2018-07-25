@@ -70,7 +70,7 @@ function checkId(){
 			<div class="form-group">
 				<label>사용자 아이디</label>
 				<form:input type="text" path="studentId"  class="form-control" name="studentId"/>
-				<button type="button" value="id중복 확인" onclick="checkId();"></button>
+				<input type="button" value="아이디중복체크" onclick="checkId();"></input>
 			</div>
 			
 			<div class="form-group">

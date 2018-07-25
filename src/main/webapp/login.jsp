@@ -41,9 +41,9 @@ body {
 		<hr />
 <!-- 		<h1>로그인</h1> -->
 
-		<form method="post">
+		<form method="post" action="">
 			<div class="form-group">
-				<label>학번 </label>
+				<label>아이디 </label>
 			   <input type="text"  class="form-control" name="loginId" value="" />
 		    </div>
 			
