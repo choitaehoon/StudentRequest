@@ -72,6 +72,15 @@ function checkId(){
 		<form:form method="post" modelAttribute="student">
 
 			<div class="form-group">
+<<<<<<< HEAD
+=======
+				<label>교수</label> <input type="radio" name="userType" value="0" />
+				<label>학생</label><input type="radio" name="userType" value="1" />
+			</div>
+			
+
+			<div class="form-group">
+>>>>>>> 로그인 구현 완료했고 민섭이하고 한 작업 합치면 로그인 완성
 				<label>사용자 아이디</label>
 				<form:input type="text" path="id"  class="form-control" name="id"/>
 				<input type="button" value="아이디중복체크" onclick="checkId();"></input>
@@ -103,11 +112,14 @@ function checkId(){
                    itemValue="departmentId" itemLabel="departmentName" items="${ departments }" />
             </div>
 			
+<<<<<<< HEAD
 			<div class="form-group">
 				<label>교수</label> <input type="radio" name="userType" value="0" />
 				<label>학생</label><input type="radio" name="userType" value="1" />
 			</div>
 
+=======
+>>>>>>> 로그인 구현 완료했고 민섭이하고 한 작업 합치면 로그인 완성
 			<button type="submit" class="btn btn-primary">
 				<i class="glyphicon glyphicon-ok"></i> 회원가입
 			</button>
