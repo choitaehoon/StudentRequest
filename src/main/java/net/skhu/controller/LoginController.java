@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -70,6 +71,7 @@ public class LoginController
 		else //학생 테이블 검사
 			return studentMapper.loginCheck(id);
 	}
+<<<<<<< HEAD
 
 	@RequestMapping("paswrdFind")
 	public String paswrdFind(Model model,LoginInfo loginInfo)
@@ -77,5 +79,30 @@ public class LoginController
 		return "member/paswrdFind";
 	}
 
+=======
+	
+	@RequestMapping(value="paswrdFind", method = RequestMethod.GET)
+	public String passwordFind(Model model)
+	{
+		model.addAttribute("loginInfo",new LoginInfo());
+		return "member/paswrdFind";
+	}
+	
+	@RequestMapping(value="paswrdFind", method = RequestMethod.POST)
+	public String passwordFind(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
+	{
+		if(loginInfo.getUserType() == 1)
+			model.addAttribute("loginInfo",professorMapper.password(loginInfo));
+		else
+			model.addAttribute("loginInfo",studentMapper.password(loginInfo));
+		return "member/paswrdFind";
+	}
+	
+	@RequestMapping(value="login", method = RequestMethod.GET)
+	public String goLoin()
+	{
+		return "redirect:../login.jsp";
+	}
+>>>>>>> 비밀번호 찾기 기능 완료
 
 }
