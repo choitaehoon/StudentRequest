@@ -47,6 +47,7 @@ body {
 				<label>학번 </label>
 			   <input type="text"  class="form-control" name="loginId" value="" />
 		    </div>
+		    
 			
 			<div class="form-group">
 				<label>비밀번호</label>
@@ -66,4 +67,6 @@ body {
 			</button>
 			                                                                                          
 		</form>
+		
+		</div>
                              
