@@ -9,10 +9,8 @@ public class Student {
 	String email; //?��메일
 	int grade; //?��?��
 	int userType; //1번이 ?��?��
-	String departmentName;
 
-
-
+	
 	public int getId() {
 		return id;
 	}
@@ -61,13 +59,6 @@ public class Student {
 	public void setUserType(int userType) {
 		this.userType = userType;
 	}
-	public String getDepartmentName() {
-		return departmentName;
-	}
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
-	}
-
 
 
 

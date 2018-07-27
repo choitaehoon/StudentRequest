@@ -1,6 +1,7 @@
 package net.student.dto;
 
-public class LoginInfo {
+public class LoginInfo 
+{
 	int id;
 	String name;
 	String password;
@@ -8,6 +9,7 @@ public class LoginInfo {
 	String email;
 	int departmentId;
 	int userType;
+	
 	public int getId() {
 		return id;
 	}
@@ -50,6 +52,5 @@ public class LoginInfo {
 	public void setUserType(int userType) {
 		this.userType = userType;
 	}
-
 
 }

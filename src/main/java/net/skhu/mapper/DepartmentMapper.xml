@@ -3,10 +3,7 @@
              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="net.skhu.mapper.DepartmentMapper">
-
-	<select id="findAll" resultType="Department">
-		SELECT * FROM department;
-	</select>
-
-
+	  <select id="findAll" resultType="Department">
+      SELECT * FROM Department
+  </select>
 </mapper>

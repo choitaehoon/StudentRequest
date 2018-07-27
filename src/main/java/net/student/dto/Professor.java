@@ -8,8 +8,7 @@ public class Professor {
 	String password; //비�?번호
 	String email; //?��메일
 	int userType; //0�? 교수
-
-
+	
 	public int getId() {
 		return id;
 	}

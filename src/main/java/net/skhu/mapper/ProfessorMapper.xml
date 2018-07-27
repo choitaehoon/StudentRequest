@@ -3,26 +3,12 @@
              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="net.skhu.mapper.ProfessorMapper">
-
-	<select id="findOne" resultType="Professor">
-     SELECT * FROM Professor WHERE id =#{id}
-    </select>
-    
-	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
-
-		INSERT Professor (id, name, password, email, departmentId, userType )
-		VALUES (#{id}, #{name}, #{password}, #{email}, #{departmentId}, #{userType})
-
-	</insert>
-
-	<update id="update">
-		UPDATE Student SET
-		 departmentId = #{departmentId},
-		 password= #{password},
-		WHERE id = #{id}
-	</update>
+	<select id="loginCheck" resultType="int">
+	select count(*) from professor where id = #{id};
+	</select>
 	
-	<delete id="delete">
-	 DELETE FROM Professor WHERE id=#{id}
-	</delete>
+	<insert id="insert">
+	insert professor (id,name,password,email,departmentId,userType)
+	values(#{id}, #{name}, #{password}, #{email}, #{departmentId}, #{userType})
+	</insert>
 </mapper>

@@ -3,7 +3,7 @@ package net.student.dto;
 public class Department {
 	int departmentId;
 	String departmentName;
-
+	
 	public int getDepartmentId() {
 		return departmentId;
 	}
@@ -16,5 +16,4 @@ public class Department {
 	public void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
 	}
-
 }

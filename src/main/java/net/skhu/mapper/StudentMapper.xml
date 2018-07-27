@@ -4,26 +4,21 @@
 
 <mapper namespace="net.skhu.mapper.StudentMapper">
 
-	<select id="findOne" resultType="Student">
-     SELECT * FROM Student WHERE id =#{id}
-    </select>
-    
-	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
-
+	<insert id="insert" >
 		INSERT Student (id,name, password, grade, email, departmentId, userType )
-		VALUES (#{id}, #{name}, #{password}, #{grade}, #{email}, #{departmentId}, #{userType})
-
+		VALUES (#{id},#{name}, #{password}, #{grade}, #{email}, #{departmentId}, #{userType})
 	</insert>
 
 	<update id="update">
 		UPDATE Student SET
-		 departmentId = #{departmentId},
-		 password= #{password},
-		 year = #{year}
+		departmentId = #{departmentId},
+		password= #{password},
+		year = #{year}
 		WHERE id = #{id}
 	</update>
 	
-	<delete id="delete">
-	 DELETE FROM Student WHERE id=#{id}
-	</delete>
+	
+	<select id="loginCheck" resultType="int">
+		select count(*) from student where id = #{id};
+	</select>
 </mapper>
