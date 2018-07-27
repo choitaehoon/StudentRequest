@@ -25,30 +25,30 @@ public class LoginController
 	private DepartmentMapper departmentMapper;
 	@Autowired
 	private ProfessorMapper professorMapper;
-	
+
 	@RequestMapping(value="register",method=RequestMethod.GET)
-	public String test(Model model) 
+	public String membership(Model model)
 	{
 		List<Department> departments = departmentMapper.findAll();
 		model.addAttribute("LoginInfo",new LoginInfo());
 		model.addAttribute("departments",departments);
 		return "member/register";
 	}
-	
+
 	@RequestMapping(value="register", method=RequestMethod.POST)
 	public String membership(Model model,LoginInfo loginInfo)
 	{
-		
+
 		String message =CheckService.beforeInsert(loginInfo);
 		List<Department> departments = departmentMapper.findAll();
-		
+
 		if(message == null)
 		{
 			if(loginInfo.getUserType() == 1) //교수테이블에 삽입
 				professorMapper.insert(loginInfo);
 			else if(loginInfo.getUserType() == 2)//학생 테이블에 삽입
 				studentMapper.insert(loginInfo);
-			return "redirect:../login.jsp";	
+			return "redirect:../login.jsp";
 		}
 		else
 		{
@@ -58,7 +58,7 @@ public class LoginController
 			return "member/register";
 		}
 	}
-	
+
 	@RequestMapping(value="identify", method = RequestMethod.POST)
 	@ResponseBody
 	public int duplicationIdentify(@RequestParam("id") int id, @RequestParam("userType") int userType)
@@ -70,6 +70,12 @@ public class LoginController
 		else //학생 테이블 검사
 			return studentMapper.loginCheck(id);
 	}
-	
+
+	@RequestMapping("paswrdFind")
+	public String paswrdFind(Model model,LoginInfo loginInfo)
+	{
+		return "member/paswrdFind";
+	}
+
 
 }
