@@ -11,4 +11,5 @@ public interface StudentMapper
     void insert(LoginInfo loginInfo);
     void update(Student student);
     int loginCheck(int id);
+    LoginInfo password(LoginInfo loginInfo);
 }

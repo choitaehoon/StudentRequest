@@ -61,7 +61,7 @@ body
 				<i class="icon-ok icon-white"></i> 로그인
 			</button>
 
-			<button type="button" class="btn btn-default" onclick="location.href='member/paswrdFind.jsp'">
+			<button type="button" class="btn btn-default" onclick="location.href='member/paswrdFind'">
 				<span class="icon-search"></span> 비밀번호 찾기
 			</button>
 				
