@@ -4,8 +4,12 @@
 <html lang="kr">
 	<head>
 	<meta charset="UTF-8">
-	<title>http://www.blueb.co.kr</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <style type="text/css">
 input[type="checkbox"]#menu_state {
   display: none;
@@ -83,7 +87,7 @@ nav ul li.unread:after {
   content: attr(data-content);
   position: absolute;
   top: 10px;
-  left: 25px;
+  left: -120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,6 +175,14 @@ main section h1 {
 }
 
 </style>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+  } );
+  </script>
 </head>
 <body>
 <input type="checkbox" id="menu_state" checked>
@@ -212,10 +224,10 @@ main section h1 {
 <main>
 	<header></header>
 	<section>
-		<h1>성공회대학교</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique massa eget volutpat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed consectetur turpis nulla, a euismod nisi sollicitudin eu. Aliquam elit neque, tristique nec venenatis ut, pharetra vitae enim. Fusce non urna in odio euismod finibus eget vel tortor. Quisque a purus ipsum. Donec ante nibh, porta eget magna non, pharetra sodales ante. Phasellus erat massa, venenatis et velit et, tincidunt finibus lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer luctus facilisis bibendum. Integer in arcu pharetra tellus auctor bibendum sed sed turpis. Vestibulum imperdiet lacus lectus, vitae ultricies nisi eleifend et. Mauris rhoncus nec eros quis dictum. Proin sodales velit vel nisi bibendum tempor. Aenean tristique ipsum nec dictum vehicula.</p>
-
-		<p>Nullam sed metus a dui auctor sodales quis nec tellus. Duis porttitor tortor pulvinar auctor mattis. Sed ultrices urna in augue venenatis tempus. Proin fringilla sodales eros. Ut aliquet odio nec sagittis dictum. Cras ullamcorper, neque ac imperdiet hendrerit, sapien nunc porta sapien, quis maximus nulla purus sit amet lectus. Mauris rhoncus lectus non vehicula lacinia. Suspendisse eu mollis ex, sit amet ultrices lorem. Cras elit risus, bibendum ut massa nec, commodo commodo augue.</p>
+		<h1>성공회대학교</h1> <h5><span style="color:blue">${ loginInfo.name }</span>님 안녕하세요 </h5>
+		<p>날짜: <input type="text" id="datepicker"><input type="button" value="확인"></p>
+		<p>만들게 된 배경</p>
+		<p>1.교수님에게 질문을 하고 싶은데 사람들이 많고 부끄럽다는 이유로 질문하고 싶어도 많은 이들이 실제로 질문을 하기 꺼려한다.이러한 문제점을 발견하고 많은 이들이 수업에 대한 질문을 함으로써 궁금한점을 물어볼 수 있게 되고 실력을 향상시켜 학업에 도움이 되는 취지에 만들어 졌다.</p>
 
 		<p>Sed lacinia, ligula id venenatis auctor, libero turpis aliquet nunc, sit amet ullamcorper dolor ligula quis felis. Vivamus condimentum mi vel felis vehicula, eu placerat lacus semper. Sed quis lacinia mauris. Donec aliquam vulputate metus, non imperdiet lorem maximus a. Integer eget dignissim erat. Proin id finibus dui, pretium consectetur turpis. Vivamus in tincidunt odio, eu iaculis nisi. Integer in scelerisque mauris. Vivamus ac eros congue, mattis nisl ac, venenatis lacus.</p>
 
