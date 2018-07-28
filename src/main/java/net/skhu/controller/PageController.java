@@ -12,20 +12,22 @@ import net.student.dto.LoginInfo;
 
 @Controller
 @RequestMapping("page")
-public class PageController 
+public class PageController
 {
 	@Autowired
 	private StudentMapper studentMapper;
 	@Autowired
-	private ProfessorMapper professorMapper; 
-	
+	private ProfessorMapper professorMapper;
+
 	@RequestMapping("check")
 	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
 	{
+
 		if(loginInfo.getUserType() == 1)
 			model.addAttribute("loginInfo",professorMapper.login(loginInfo));
 		else
 			model.addAttribute("loginInfo",studentMapper.login(loginInfo));
 		return "page/check";
+
 	}
 }
