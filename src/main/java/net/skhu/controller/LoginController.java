@@ -71,7 +71,6 @@ public class LoginController
 		else //학생 테이블 검사
 			return studentMapper.loginCheck(id);
 	}
-<<<<<<< HEAD
 
 	@RequestMapping("paswrdFind")
 	public String paswrdFind(Model model,LoginInfo loginInfo)
@@ -79,7 +78,6 @@ public class LoginController
 		return "member/paswrdFind";
 	}
 
-=======
 	
 	@RequestMapping(value="paswrdFind", method = RequestMethod.GET)
 	public String passwordFind(Model model)
@@ -103,6 +101,5 @@ public class LoginController
 	{
 		return "redirect:../login.jsp";
 	}
->>>>>>> 비밀번호 찾기 기능 완료
 
 }

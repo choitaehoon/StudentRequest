@@ -10,4 +10,5 @@ public interface ProfessorMapper
 	void insert(LoginInfo loginInfo);
 	int loginCheck(int id);
 	LoginInfo password(LoginInfo loginInfo);
+	LoginInfo login(LoginInfo loginInfo);
 }

@@ -39,7 +39,7 @@ body
 		<H1>Student Request</H1>
 		<hr />
 
-		<form method="post" action="member/check">
+		<form method="post" action="page/check">
 			<div class="form-group">
 				<label>교수</label> <input type="radio" name="userType" value="1" />
 				<label>학생</label><input type="radio" name="userType" value="2" />
@@ -47,7 +47,7 @@ body
 			
 			<div class="form-group">
 				<label>아이디 </label>
-			   <input type="text"  class="form-control" name="studentId" 
+			   <input type="text"  class="form-control" name="id" 
 			   	placeholder="(학번 또는 교수아이디를 입력하세요)"/>
 		    </div>
 			
