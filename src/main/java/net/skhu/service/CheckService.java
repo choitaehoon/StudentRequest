@@ -4,7 +4,7 @@ import org.springframework.util.StringUtils;
 
 import net.student.dto.LoginInfo;
 
-public class CheckService 
+public class CheckService
 {
 		public static String beforeInsert(LoginInfo loginInfo) {
 			if(loginInfo.getUserType() == 0 )
@@ -47,6 +47,23 @@ public class CheckService
 				return "유저타입를 선택하세요";
 
 
+
+			return null;
+
+		}
+		public static String beforeLogin(LoginInfo loginInfo) {
+			if(loginInfo.getUserType() == 0 )
+				return "교수나 학생 버튼을 입력하세요";
+
+			int i=loginInfo.getId();
+		    String s = String.valueOf(i);
+			if(StringUtils.isEmpty(s))
+				return "학번을 입력하세요";
+
+
+			s=loginInfo.getPassword();
+			if(StringUtils.isEmpty(s))
+				return "비밀번호를 입력하세요";
 
 			return null;
 

@@ -27,6 +27,7 @@ public class LoginController
 	@Autowired
 	private ProfessorMapper professorMapper;
 
+	//회원가입 정보 입력하기전
 	@RequestMapping(value="register",method=RequestMethod.GET)
 	public String membership(Model model)
 	{
@@ -36,13 +37,17 @@ public class LoginController
 		return "member/register";
 	}
 
+	//회원가입 정보 입력후
 	@RequestMapping(value="register", method=RequestMethod.POST)
 	public String membership(Model model,LoginInfo loginInfo)
 	{
 
+		//정보 미입력 에러 메세지
 		String message =CheckService.beforeInsert(loginInfo);
+		//학과정보 불러오기
 		List<Department> departments = departmentMapper.findAll();
 
+		//정보를 다 입력 했을때
 		if(message == null)
 		{
 			if(loginInfo.getUserType() == 1) //교수테이블에 삽입
@@ -51,7 +56,7 @@ public class LoginController
 				studentMapper.insert(loginInfo);
 			return "redirect:../login.jsp";
 		}
-		else
+		else//정보를 하나라도 입력 안했을시 입력하라는 에러메세지 전달
 		{
 			model.addAttribute("error",message);
 			model.addAttribute("LoginInfo", loginInfo);
@@ -60,6 +65,7 @@ public class LoginController
 		}
 	}
 
+	//중복아이디 체크
 	@RequestMapping(value="identify", method = RequestMethod.POST)
 	@ResponseBody
 	public int duplicationIdentify(@RequestParam("id") int id, @RequestParam("userType") int userType)
@@ -78,14 +84,15 @@ public class LoginController
 		return "member/paswrdFind";
 	}
 
-	
+
+	//비밀번호 찾기
 	@RequestMapping(value="paswrdFind", method = RequestMethod.GET)
 	public String passwordFind(Model model)
 	{
 		model.addAttribute("loginInfo",new LoginInfo());
 		return "member/paswrdFind";
 	}
-	
+
 	@RequestMapping(value="paswrdFind", method = RequestMethod.POST)
 	public String passwordFind(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
 	{
@@ -95,11 +102,13 @@ public class LoginController
 			model.addAttribute("loginInfo",studentMapper.password(loginInfo));
 		return "member/paswrdFind";
 	}
-	
+
 	@RequestMapping(value="login", method = RequestMethod.GET)
 	public String goLoin()
 	{
 		return "redirect:../login.jsp";
 	}
+
+
 
 }
