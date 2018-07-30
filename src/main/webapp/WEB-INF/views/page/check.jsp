@@ -217,7 +217,7 @@ main section h1 {
 
 		<c:if test="${loginInfo.userType == 1 }">
 		<li>
-			<a href="javascript:void(0)">
+			<a href="lecture/lectureRegister">
 			<i class="fa fa-plus-square"></i>
 			<span>수업등록</span>
 			</a>

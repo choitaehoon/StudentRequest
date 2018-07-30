@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import net.skhu.mapper.ProfessorMapper;
 import net.skhu.mapper.StudentMapper;
@@ -28,6 +29,14 @@ public class PageController{
 		else
 			model.addAttribute("loginInfo",studentMapper.login(loginInfo));
 		return "page/check";
+
+	}
+
+	@RequestMapping(value="lecture/lectureRegister", method=RequestMethod.GET)
+	public String lectureR(Model model)
+	{
+
+		return "page/lecture/lectureRegister";
 
 	}
 }
