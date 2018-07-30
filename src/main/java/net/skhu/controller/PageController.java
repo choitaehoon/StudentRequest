@@ -11,13 +11,8 @@ import net.skhu.mapper.StudentMapper;
 import net.student.dto.LoginInfo;
 
 @Controller
-<<<<<<< HEAD
 @RequestMapping("/page")
 public class PageController 
-=======
-@RequestMapping("page")
-public class PageController
->>>>>>> 156d679f34acae5a9cd002c9c1c765003eab21b9
 {
 	@Autowired
 	private StudentMapper studentMapper;
