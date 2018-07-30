@@ -17,8 +17,15 @@
 		WHERE id = #{id}
 	</update>
 	
-	
 	<select id="loginCheck" resultType="int">
 		select count(*) from student where id = #{id};
+	</select>
+	
+	<select id ="password" resultType="LoginInfo">
+	select * from student where id = #{id} and email = #{email}
+	</select>
+	
+	<select id="login" resultType="LoginInfo">
+	select * from student where id = #{id} and password = #{password}
 	</select>
 </mapper>

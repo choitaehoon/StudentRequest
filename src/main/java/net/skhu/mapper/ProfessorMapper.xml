@@ -11,4 +11,12 @@
 	insert professor (id,name,password,email,departmentId,userType)
 	values(#{id}, #{name}, #{password}, #{email}, #{departmentId}, #{userType})
 	</insert>
+	
+	<select id="password" resultType="LoginInfo">
+	select * from professor where id = #{id} and email = #{email}
+	</select>
+	
+	<select id="login" resultType="LoginInfo">
+	select * from professor where id = #{id} and password = #{password}
+	</select>
 </mapper>
