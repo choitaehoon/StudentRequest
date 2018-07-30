@@ -214,19 +214,32 @@ main section h1 {
 				<span>진도페이지</span>
 			</a>
 		</li>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 72df9986e3b2254d46733284f385cb06e26bcc3f
 		<c:if test="${loginInfo.userType == 1 }">
 		<li>
-			<a href="javascript:void(0)">
-			<i class="far fa-clipboard"></i>
+			<a href="lecture/lectureRegister">
+			<i class="fa fa-plus-square"></i>
 			<span>수업등록</span>
 			</a>
 		</li>
 		</c:if>
+<<<<<<< HEAD
 		<li data-content="2" class="unread">
 			<a href="../login.jsp" onclick="return confirm('로그아웃 하시겠습니까?')">
 				<i class="fa fa-sign-out"></i>
+=======
+
+		<li data-content="2" class="unread">
+			<a href="../login.jsp" onclick="return confirm('로그아웃 하시겠습니까?')">
+				<i class="fa fa-sign-out"></i>
+
+>>>>>>> 72df9986e3b2254d46733284f385cb06e26bcc3f
 				<span>로그아웃</span>
 			</a>
+			
 		</li>
 		
 	</ul>

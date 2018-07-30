@@ -60,7 +60,7 @@ public class LoginController
 		{
 			model.addAttribute("error",message);
 			model.addAttribute("LoginInfo", loginInfo);
-		    model.addAttribute("departments", departments);
+			model.addAttribute("departments", departments);
 			return "member/register";
 		}
 	}
@@ -106,7 +106,10 @@ public class LoginController
 	@RequestMapping(value="login", method = RequestMethod.GET)
 	public String goLoin()
 	{
-		return "redirect:../login.jsp";
+
+
+			return "redirect:../login.jsp";
+
 	}
 
 
