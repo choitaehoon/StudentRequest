@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <%
 	request.setCharacterEncoding("UTF-8");
 	String userid = "";
@@ -20,6 +21,9 @@
 			에러메시지 = "이메일 주소를 입력하세요";
 	}
 %>
+=======
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,25 +65,45 @@ input.form-control, select.form-control {
 		<hr />
 
 		<form method="post">
+<<<<<<< HEAD
 			<div class="from-group">
 				<label>사용자 아이디</label> <input type="text" class="form-control"
 					name="userid" value="<%=userid%>" />
+=======
+			<div class="form-group">
+				<label>교수</label> <input type="radio" name="userType" value="1" />
+				<label>학생</label><input type="radio" name="userType" value="2" />
+			</div>
+		
+			<div class="from-group">
+				<label>사용자 아이디</label> <input type="text" class="form-control"
+					name="id"  />
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 			</div>
 
 			<div class="form-group">
 				<label>이메일</label> <input type="email" class="form-control"
+<<<<<<< HEAD
 					name="email" value="<%=email%>" />
+=======
+					name="email"  />
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 			</div>
 
 			<button type="submit" class="btn btn-primary">
 				<i class="glyphicon glyphicon-ok"></i> 찾기
 			</button>
 			
+<<<<<<< HEAD
 			<a href="../login.jsp" class="btn btn-default">
+=======
+			<a href="login" class="btn btn-default">
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
             <i class="glyphicon glyphicon-home"></i> 홈 </a>
 			
 		</form>
 		<hr />
+<<<<<<< HEAD
 		<%
 			if (에러메시지 != null) {
 		%>
@@ -91,6 +115,11 @@ input.form-control, select.form-control {
 			}
 		%>
 
+=======
+		<c:if test="${loginInfo.userType != 0}">
+			<span style="color:blue">비밀 번호는 ${loginInfo.password}</span>
+		</c:if>
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 	</div>
 </body>
 </html>
