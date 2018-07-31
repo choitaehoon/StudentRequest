@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -68,7 +67,7 @@ body
 			<button type="button" class="btn btn-default" onclick="location.href='member/paswrdFind'">
 				<span class="icon-search"></span> 비밀번호 찾기
 			</button>
-			되라제바류
+			
 			<button type="button" class="btn btn-default" onclick="location.href='member/register'">
 					<i class="icon-user"></i>회원가입
 			</button>

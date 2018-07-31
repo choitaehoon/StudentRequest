@@ -13,13 +13,9 @@ import net.student.dto.LoginInfo;
 
 @Controller
 @RequestMapping("/page")
-<<<<<<< HEAD
 public class PageController 
 {
-=======
-public class PageController{
 
->>>>>>> 72df9986e3b2254d46733284f385cb06e26bcc3f
 	@Autowired
 	private StudentMapper studentMapper;
 	@Autowired
@@ -37,11 +33,9 @@ public class PageController{
 
 	}
 
-	@RequestMapping(value="lecture/lectureRegister", method=RequestMethod.GET)
+	@RequestMapping(value="lectureRegister", method=RequestMethod.GET)
 	public String lectureR(Model model)
 	{
-
-		return "page/lecture/lectureRegister";
-
+		return "page/lectureRegister";
 	}
 }

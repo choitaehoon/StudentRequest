@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/page/mainpage.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <c:url var="R" value="/" />
@@ -50,7 +51,6 @@ input.form-control, select.form-control {
 		<hr />
 		<form method="post">
 
-
 			<div class="form-group">
 				<label>수업번호</label>
 				<input type="text"  class="form-control" name="classId"/>
@@ -60,13 +60,11 @@ input.form-control, select.form-control {
 				<label>수업이름</label>
 				<input type="text"  class="form-control" />
 			</div>
-			
 
 			<div class="form-group">
 				<label>강의계획서</label>
 				<input type="text"  class="form-control" name=""/>
 			</div>
-
 
 			<div class="form-group">
 				<label>강의실번호</label> 
