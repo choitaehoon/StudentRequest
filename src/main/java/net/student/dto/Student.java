@@ -1,16 +1,16 @@
 package net.student.dto;
 
 public class Student {
-	int id; //?���?
-	String name; //?��?��?���?
-	int departmentId; //?��과번?��
+	int id; //학번
+	String name; //이름
+	int departmentId; //학과번호
 	String subject; //과목
-	String password; //비�?번호
-	String email; //?��메일
-	int grade; //?��?��
-	int userType; //1번이 ?��?��
+	String password; //비밀번호
+	String email; //이메일
+	int grade; //학년
+	int userType; //1번이 학생
 
-	
+
 	public int getId() {
 		return id;
 	}

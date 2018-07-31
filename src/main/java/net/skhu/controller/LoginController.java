@@ -26,40 +26,46 @@ public class LoginController
 	private DepartmentMapper departmentMapper;
 	@Autowired
 	private ProfessorMapper professorMapper;
-	
+
+	//회원가입 정보 입력하기전
 	@RequestMapping(value="register",method=RequestMethod.GET)
-	public String test(Model model) 
+	public String membership(Model model)
 	{
 		List<Department> departments = departmentMapper.findAll();
 		model.addAttribute("LoginInfo",new LoginInfo());
 		model.addAttribute("departments",departments);
 		return "member/register";
 	}
-	
+
+	//회원가입 정보 입력후
 	@RequestMapping(value="register", method=RequestMethod.POST)
 	public String membership(Model model,LoginInfo loginInfo)
 	{
-		
+
+		//정보 미입력 에러 메세지
 		String message =CheckService.beforeInsert(loginInfo);
+		//학과정보 불러오기
 		List<Department> departments = departmentMapper.findAll();
-		
+
+		//정보를 다 입력 했을때
 		if(message == null)
 		{
 			if(loginInfo.getUserType() == 1) //교수테이블에 삽입
 				professorMapper.insert(loginInfo);
 			else if(loginInfo.getUserType() == 2)//학생 테이블에 삽입
 				studentMapper.insert(loginInfo);
-			return "redirect:../login.jsp";	
+			return "redirect:../login.jsp";
 		}
-		else
+		else//정보를 하나라도 입력 안했을시 입력하라는 에러메세지 전달
 		{
 			model.addAttribute("error",message);
 			model.addAttribute("LoginInfo", loginInfo);
-		    model.addAttribute("departments", departments);
+			model.addAttribute("departments", departments);
 			return "member/register";
 		}
 	}
-	
+
+	//중복아이디 체크
 	@RequestMapping(value="identify", method = RequestMethod.POST)
 	@ResponseBody
 	public int duplicationIdentify(@RequestParam("id") int id, @RequestParam("userType") int userType)
@@ -71,14 +77,30 @@ public class LoginController
 		else //학생 테이블 검사
 			return studentMapper.loginCheck(id);
 	}
+<<<<<<< HEAD
 	
+=======
+
+//	@RequestMapping("paswrdFind")
+//	public String paswrdFind(Model model,LoginInfo loginInfo)
+//	{
+//		return "member/paswrdFind";
+//	}
+
+
+	//비밀번호 찾기
+>>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
 	@RequestMapping(value="paswrdFind", method = RequestMethod.GET)
 	public String passwordFind(Model model)
 	{
 		model.addAttribute("loginInfo",new LoginInfo());
 		return "member/paswrdFind";
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
 	@RequestMapping(value="paswrdFind", method = RequestMethod.POST)
 	public String passwordFind(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
 	{
@@ -88,11 +110,23 @@ public class LoginController
 			model.addAttribute("loginInfo",studentMapper.password(loginInfo));
 		return "member/paswrdFind";
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping(value="login", method = RequestMethod.GET)
 	public String goLoin()
 	{
 		return "redirect:../login.jsp";
 	}
+=======
+
+	@RequestMapping(value="login", method = RequestMethod.GET)
+	public String goLoin()
+	{
+			return "redirect:../login.jsp";
+
+	}
+
+
+>>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
 
 }
