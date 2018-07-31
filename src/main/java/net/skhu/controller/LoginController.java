@@ -77,9 +77,6 @@ public class LoginController
 		else //학생 테이블 검사
 			return studentMapper.loginCheck(id);
 	}
-<<<<<<< HEAD
-	
-=======
 
 //	@RequestMapping("paswrdFind")
 //	public String paswrdFind(Model model,LoginInfo loginInfo)
@@ -89,18 +86,13 @@ public class LoginController
 
 
 	//비밀번호 찾기
->>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
 	@RequestMapping(value="paswrdFind", method = RequestMethod.GET)
 	public String passwordFind(Model model)
 	{
 		model.addAttribute("loginInfo",new LoginInfo());
 		return "member/paswrdFind";
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
 	@RequestMapping(value="paswrdFind", method = RequestMethod.POST)
 	public String passwordFind(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
 	{
@@ -110,23 +102,12 @@ public class LoginController
 			model.addAttribute("loginInfo",studentMapper.password(loginInfo));
 		return "member/paswrdFind";
 	}
-<<<<<<< HEAD
 	
 	@RequestMapping(value="login", method = RequestMethod.GET)
 	public String goLoin()
 	{
 		return "redirect:../login.jsp";
 	}
-=======
 
-	@RequestMapping(value="login", method = RequestMethod.GET)
-	public String goLoin()
-	{
-			return "redirect:../login.jsp";
-
-	}
-
-
->>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
 
 }

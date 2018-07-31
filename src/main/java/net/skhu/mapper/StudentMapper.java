@@ -12,8 +12,6 @@ public interface StudentMapper
     void update(Student student);
     int loginCheck(int id);
     LoginInfo password(LoginInfo loginInfo);
-<<<<<<< HEAD
-=======
     LoginInfo login (LoginInfo loginInfo);
->>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
+    LoginInfo turnOver(int id);
 }

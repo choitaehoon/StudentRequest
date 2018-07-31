@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import net.skhu.mapper.ProfessorMapper;
 import net.skhu.mapper.StudentMapper;
@@ -30,12 +31,25 @@ public class PageController
 		else
 			model.addAttribute("loginInfo",studentMapper.login(loginInfo));
 		return "page/check";
-
 	}
-
-	@RequestMapping(value="lectureRegister", method=RequestMethod.GET)
-	public String lectureR(Model model)
+	
+	@RequestMapping("main")
+	public String mainGo(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)
 	{
+		System.out.println(id);
+		System.out.println(userType);
+		if(userType == 1)
+			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		else
+			model.addAttribute("loginInfo",studentMapper.turnOver(id));
+		return "page/check";
+	}
+	
+	@RequestMapping(value="lectureRegister", method=RequestMethod.GET)
+	public String lectureR(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)
+	{
+		model.addAttribute("id",id);
+		model.addAttribute("userType",userType);
 		return "page/lectureRegister";
 	}
 }

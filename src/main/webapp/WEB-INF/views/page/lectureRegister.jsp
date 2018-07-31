@@ -16,7 +16,6 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
 <style type="text/css">
 #center 
 {
@@ -50,32 +49,32 @@ input.form-control, select.form-control {
 		<h1>수업등록</h1>
 		<hr />
 		<form method="post">
-
-			<div class="form-group">
-				<label>수업번호</label>
-				<input type="text"  class="form-control" name="classId"/>
-			</div>
 			
 			<div class="form-group">
 				<label>수업이름</label>
-				<input type="text"  class="form-control" />
-			</div>
-
-			<div class="form-group">
-				<label>강의계획서</label>
 				<input type="text"  class="form-control" name=""/>
 			</div>
-
+			
 			<div class="form-group">
 				<label>강의실번호</label> 
 				<input type="text"  class="form-control" name=""/>
+            </div>
+			
+			<div class="form-group">
+				<label>강의 내용</label> 
+				<textarea rows="10" cols="50" name="contents"></textarea>
+            </div>
+			
+			<div class="form-group">
+				<label>강의 날짜</label> 
+				<input type="text" id="datepicker"><input type="button" value="확인">
             </div>
 			
 			<button type="submit" class="btn btn-primary">
 				<i class="glyphicon glyphicon-ok"></i> 등록
 			</button>
 
-			<a href="../check" class="btn btn-default"> <i
+			<a href="main?id=${id}&userType=${userType}" class="btn btn-default"> <i
 				class="glyphicon glyphicon-home"></i> 이전페이지
 			</a>
 

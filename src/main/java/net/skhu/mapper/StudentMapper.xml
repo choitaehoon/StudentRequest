@@ -24,11 +24,12 @@
 	<select id ="password" resultType="LoginInfo">
 	select * from student where id = #{id} and email = #{email}
 	</select>
-<<<<<<< HEAD
-=======
 	
 	<select id="login" resultType="LoginInfo">
 	select * from student where id = #{id} and password = #{password}
 	</select>
->>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
+	
+	<select id="turnOver" resultType="LoginInfo">
+	select * from student where id = #{id}
+	</select>
 </mapper>

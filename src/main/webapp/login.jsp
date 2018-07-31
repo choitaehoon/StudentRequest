@@ -63,11 +63,7 @@ body
 			<button type="submit" class="btn btn-primary">
 				<i class="icon-ok icon-white"></i> 로그인
 			</button>
-<<<<<<< HEAD
-
-=======
 			
->>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
 			<button type="button" class="btn btn-default" onclick="location.href='member/paswrdFind'">
 				<span class="icon-search"></span> 비밀번호 찾기
 			</button>
