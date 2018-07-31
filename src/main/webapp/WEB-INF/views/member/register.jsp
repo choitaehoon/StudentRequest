@@ -55,7 +55,11 @@ function checkId(){
             }
         },
         error:function(){
+<<<<<<< HEAD
+                alert("에러입니다");
+=======
                 alert("버튼을 입력하세요");
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
         }
     });
 };
@@ -69,6 +73,15 @@ function checkId(){
 	<div id=center class="container main">
 		<h1>회원가입</h1>
 		<hr />
+<<<<<<< HEAD
+		<form:form method="post" modelAttribute="student">
+
+			<div class="form-group">
+<<<<<<< HEAD
+=======
+				<label>교수</label> <input type="radio" name="userType" value="0" />
+				<label>학생</label><input type="radio" name="userType" value="1" />
+=======
 		<form:form method="post" modelAttribute="LoginInfo">
 
 			<div class="form-group">
@@ -76,10 +89,15 @@ function checkId(){
 				${LoginInfo.userType == 1 ? "checked" : "" }/>
 				<label>학생</label><input type="radio" name="userType" value="2" 
 				${ LoginInfo.userType == 2 ? "checked" : "" }/>
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 			</div>
 			
 
 			<div class="form-group">
+<<<<<<< HEAD
+>>>>>>> 로그인 구현 완료했고 민섭이하고 한 작업 합치면 로그인 완성
+=======
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 				<label>사용자 아이디</label>
 				<form:input type="text" path="id"  class="form-control" name="id"/>
 				<input type="button" value="아이디중복체크" onclick="checkId();"></input>
@@ -111,6 +129,17 @@ function checkId(){
                    itemValue="departmentId" itemLabel="departmentName" items="${ departments }" />
             </div>
 			
+<<<<<<< HEAD
+<<<<<<< HEAD
+			<div class="form-group">
+				<label>교수</label> <input type="radio" name="userType" value="0" />
+				<label>학생</label><input type="radio" name="userType" value="1" />
+			</div>
+
+=======
+>>>>>>> 로그인 구현 완료했고 민섭이하고 한 작업 합치면 로그인 완성
+=======
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 			<button type="submit" class="btn btn-primary">
 				<i class="glyphicon glyphicon-ok"></i> 회원가입
 			</button>
@@ -121,9 +150,12 @@ function checkId(){
 
 		</form:form>
 
+<<<<<<< HEAD
+=======
 		<c:if test="${ not empty error }">
 			<div class="alert alert-error"><span style="color:red">${ error }</span></div>
 		</c:if>
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 
 	</div>
 </body>

@@ -6,6 +6,8 @@
 	<select id="loginCheck" resultType="int">
 	select count(*) from professor where id = #{id};
 	</select>
+<<<<<<< HEAD
+=======
 	
 	<insert id="insert">
 	insert professor (id,name,password,email,departmentId,userType)
@@ -19,8 +21,13 @@
 	<select id="login" resultType="LoginInfo">
 	select * from professor where id = #{id} and password = #{password}
 	</select>
+<<<<<<< HEAD
 	
 	<select id="turnOver" resultType="LoginInfo">
 	select * from professor where id = #{id}
 	</select>
+=======
+>>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
+>>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
+>>>>>>> taehoon
 </mapper>
