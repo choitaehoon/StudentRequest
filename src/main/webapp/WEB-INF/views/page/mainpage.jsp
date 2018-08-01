@@ -218,7 +218,7 @@ main section h1 {
 		
 		<c:if test="${loginInfo.userType == 2 || userType == 2}">
 		<li>
-		<a href="javascript:void(window.open('http://sam.skhu.ac.kr/SSE/SSEA1/SSEA104', 'leture','width=#, height=#'))">
+		<a href="javascript:void(window.open('http://sam.skhu.ac.kr/SSE/SSEA1/SSEA104', '_blank','width=#, height=#'))">
 		
 			<i class="fa fa-plus-square"></i>
 			<span>강의계획서 조회</span>
