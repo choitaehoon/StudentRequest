@@ -4,11 +4,7 @@
 
 <mapper namespace="net.skhu.mapper.StudentMapper">
 
-<<<<<<< HEAD
-	<insert id="insert" useGeneratedKeys="true" keyProperty="studentId">
-=======
 	<insert id="insert" >
->>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 		INSERT Student (id,name, password, grade, email, departmentId, userType )
 		VALUES (#{id},#{name}, #{password}, #{grade}, #{email}, #{departmentId}, #{userType})
 	</insert>
@@ -21,15 +17,10 @@
 		WHERE id = #{id}
 	</update>
 	
-<<<<<<< HEAD
-	
 	<select id="loginCheck" resultType="int">
 		select count(*) from student where id = #{id};
 	</select>
-=======
-	<select id="loginCheck" resultType="int">
-		select count(*) from student where id = #{id};
-	</select>
+
 	
 	<select id ="password" resultType="LoginInfo">
 	select * from student where id = #{id} and email = #{email}
@@ -38,13 +29,9 @@
 	<select id="login" resultType="LoginInfo">
 	select * from student where id = #{id} and password = #{password}
 	</select>
-<<<<<<< HEAD
 	
 	<select id="turnOver" resultType="LoginInfo">
 	select * from student where id = #{id}
 	</select>
-=======
->>>>>>> c3d01d9cc78dadb339b75fd048116a2bafe125f0
->>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
->>>>>>> taehoon
+
 </mapper>

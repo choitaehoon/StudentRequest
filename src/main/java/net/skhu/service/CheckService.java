@@ -1,11 +1,5 @@
 package net.skhu.service;
 
-<<<<<<< HEAD
-public class CheckService 
-{
-
-}
-=======
 import org.springframework.util.StringUtils;
 
 import net.student.dto.LoginInfo;
@@ -77,4 +71,3 @@ public class CheckService
 
 	}
 
->>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7

@@ -13,19 +13,17 @@ import net.skhu.mapper.StudentMapper;
 import net.student.dto.LoginInfo;
 
 @Controller
-@RequestMapping("/page")
+@RequestMapping("page")
 public class PageController 
 {
-
 	@Autowired
 	private StudentMapper studentMapper;
 	@Autowired
 	private ProfessorMapper professorMapper;
 
-	@RequestMapping("check")
+	@RequestMapping(value="check", method=RequestMethod.POST)
 	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
 	{
-
 		if(loginInfo.getUserType() == 1)
 			model.addAttribute("loginInfo",professorMapper.login(loginInfo));
 		else
@@ -36,8 +34,6 @@ public class PageController
 	@RequestMapping("main")
 	public String mainGo(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)
 	{
-		System.out.println(id);
-		System.out.println(userType);
 		if(userType == 1)
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
 		else

@@ -78,12 +78,6 @@ public class LoginController
 			return studentMapper.loginCheck(id);
 	}
 
-//	@RequestMapping("paswrdFind")
-//	public String paswrdFind(Model model,LoginInfo loginInfo)
-//	{
-//		return "member/paswrdFind";
-//	}
-
 
 	//비밀번호 찾기
 	@RequestMapping(value="paswrdFind", method = RequestMethod.GET)

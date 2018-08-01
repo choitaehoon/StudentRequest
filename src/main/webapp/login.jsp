@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<<<<<<< HEAD
-=======
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <c:url var="R" value="/" />
->>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,26 +42,14 @@ body
 		<H1>Student Request</H1>
 		<hr />
 
-<<<<<<< HEAD
-		<form method="post" action="member/check">
-			<div class="form-group">
-				<label>교수</label> <input type="radio" name="userType" value="0" />
-				<label>학생</label><input type="radio" name="userType" value="1" />
-=======
-		<form method="post" action="page/check">
+		<form method="post" action="page/check" >
 			<div class="form-group">
 				<label>교수</label> <input type="radio" name="userType" value="1" />
 				<label>학생</label><input type="radio" name="userType" value="2" />
->>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 			</div>
-			
 			<div class="form-group">
 				<label>아이디 </label>
-<<<<<<< HEAD
-			   <input type="text"  class="form-control" name="studentId" 
-=======
 			   <input type="text"  class="form-control" name="id" 
->>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 			   	placeholder="(학번 또는 교수아이디를 입력하세요)"/>
 		    </div>
 			
@@ -77,36 +62,20 @@ body
 			<button type="submit" class="btn btn-primary">
 				<i class="icon-ok icon-white"></i> 로그인
 			</button>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
-			<button type="button" class="btn btn-default" onclick="location.href='member/paswrdFind.jsp'">
-				<span class="icon-search"></span> 비밀번호 찾기
-			</button>
-				
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> taehoon
-			
 			<button type="button" class="btn btn-default" onclick="location.href='member/paswrdFind'">
 				<span class="icon-search"></span> 비밀번호 찾기
 			</button>
+				
 			
->>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 			<button type="button" class="btn btn-default" onclick="location.href='member/register'">
 					<i class="icon-user"></i>회원가입
 			</button>
 			
 		</form>
-<<<<<<< HEAD
 
-=======
 		<hr/>
 		
->>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
 	</div>
 </body>
 </html>

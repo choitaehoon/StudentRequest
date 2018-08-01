@@ -184,6 +184,7 @@ main section h1 {
   } );
   </script>
 </head>
+
 <body>
 <input type="checkbox" id="menu_state" checked>
 <nav>
