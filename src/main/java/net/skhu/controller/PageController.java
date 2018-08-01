@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ch.qos.logback.classic.Logger;
 import net.skhu.mapper.ProfessorMapper;
 import net.skhu.mapper.StudentMapper;
 import net.student.dto.LoginInfo;

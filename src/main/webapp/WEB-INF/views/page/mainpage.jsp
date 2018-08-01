@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="kr">
-	<head>
-	<meta charset="UTF-8">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <style type="text/css">
 input[type="checkbox"]#menu_state {
   display: none;
@@ -214,6 +215,7 @@ main section h1 {
 				<span>진도페이지</span>
 			</a>
 		</li>
+		
 		<c:if test="${loginInfo.userType == 1 }">
 		<li>
 			<a href="lectureRegister?id=${ loginInfo.id }&userType=${loginInfo.userType}">
@@ -222,6 +224,7 @@ main section h1 {
 			</a>
 		</li>
 		</c:if>
+		
 		<li data-content="2" class="unread">
 			<a href="../login.jsp" onclick="return confirm('로그아웃 하시겠습니까?')">
 				<i class="fa fa-sign-out"></i>

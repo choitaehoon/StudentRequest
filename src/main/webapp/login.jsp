@@ -31,9 +31,7 @@ body
  input.form-control, select.form-control { width: 270px; }
 
 </style>
-
 <title>login</title>
-
 </head>
 
 <body>
@@ -47,6 +45,7 @@ body
 				<label>교수</label> <input type="radio" name="userType" value="1" />
 				<label>학생</label><input type="radio" name="userType" value="2" />
 			</div>
+			
 			<div class="form-group">
 				<label>아이디 </label>
 			   <input type="text"  class="form-control" name="id" 
