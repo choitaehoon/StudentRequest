@@ -216,7 +216,7 @@ main section h1 {
 			</a>
 		</li>
 		
-		<c:if test="${loginInfo.userType == 1 }">
+		<c:if test="${loginInfo.userType == 1 || userType == 1}">
 		<li>
 			<a href="lectureRegister?id=${ loginInfo.id }&userType=${loginInfo.userType}">
 			<i class="fa fa-plus-square"></i>

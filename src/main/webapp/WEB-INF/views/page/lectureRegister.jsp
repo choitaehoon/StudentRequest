@@ -41,8 +41,6 @@ input.form-control, select.form-control {
 	width: 200px;
 }
 </style>
-
-
  
 <title>register</title>
 </head>
