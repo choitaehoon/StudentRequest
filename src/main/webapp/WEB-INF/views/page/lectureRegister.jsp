@@ -56,6 +56,11 @@ input.form-control, select.form-control {
 				<input type="text"  class="form-control" name=""/>
 			</div>
 			
+<!-- 			<div class="form-group"> -->
+<!-- <!-- 			교수님이름 --> 
+<!-- 				<input type="hidden"  class="form-control" name=""/> -->
+<!--             </div> -->
+			
 			<div class="form-group">
 				<label>강의실번호</label> 
 				<input type="text"  class="form-control" name=""/>
@@ -67,7 +72,22 @@ input.form-control, select.form-control {
             </div>
 			
 			<div class="form-group">
-				<label>강의 날짜</label> 
+				<label>강의 시간1</label> 
+				<input type="text"  class="form-control" name=""/>
+            </div>
+            
+            <div class="form-group">
+				<label>강의 시간2</label> 
+				<input type="text"  class="form-control" name=""/>
+            </div>
+            
+			<div class="form-group">
+				<label>강의 날짜1</label> 
+				<input type="text" id="datepicker"><input type="button" value="확인">
+            </div>
+            
+            <div class="form-group">
+				<label>강의 날짜2</label> 
 				<input type="text" id="datepicker"><input type="button" value="확인">
             </div>
 			

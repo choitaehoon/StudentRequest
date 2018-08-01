@@ -220,7 +220,6 @@ main section h1 {
 		<li>
 		<a href="javascript:void(window.open('http://sam.skhu.ac.kr/SSE/SSEA1/SSEA104', 'leture','width=#, height=#'))">
 		
-<!-- 			<a href="http://sam.skhu.ac.kr/SSE/SSEA1/SSEA104"> -->
 			<i class="fa fa-plus-square"></i>
 			<span>강의계획서 조회</span>
 			</a>
