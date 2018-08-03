@@ -1,6 +1,6 @@
 package net.student.dto;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class ClassPlan 
 {
@@ -8,7 +8,7 @@ public class ClassPlan
 	int professorId;
 	int classId;
 	int classBody;
-	Date classDate;
+	Timestamp classDate;
 	public int getPlanNo() {
 		return planNo;
 	}
@@ -33,12 +33,11 @@ public class ClassPlan
 	public void setClassBody(int classBody) {
 		this.classBody = classBody;
 	}
-	public Date getClassDate() {
+	public Timestamp getClassDate() {
 		return classDate;
 	}
-	public void setClassDate(Date classDate) {
+	public void setClassDate(Timestamp classDate) {
 		this.classDate = classDate;
 	}
-	
 	
 }
