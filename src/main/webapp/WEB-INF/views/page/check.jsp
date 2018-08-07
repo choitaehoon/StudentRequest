@@ -19,20 +19,22 @@
       table.table { margin-top: 5px; }
       select[name=od] { margin-right: 20px; }
   </style>
+  
 </head>
 <body>
 <main>
 	<header></header>
 	<section>
 		
-		
 		<h1>성공회대학교</h1> <h5><i class="fa fa-paper-plane"></i> <span style="color:blue"> ${ loginInfo.name } </span>님 안녕하세요</h5>
 		<p>날짜
 		<form action="find" method="post">
 		<input type="hidden" name="id" value="${ loginInfo.id }">
 		<input type="hidden" name="userType" value="${ loginInfo.userType }">
+		<input type="hidden" name="test" value="1">
 		<input type="text" id="datepicker" name="datea"><input type="submit" value="확인">
-		<p>수업</p>
+		
+		<c:if test="${test eq 1 }">
 		<table class="table table-bordered table-condensed">
 		<thead>
 		  <tr>
@@ -43,9 +45,7 @@
 		     <th>끝나는시간</th>
 	      </tr>
 		</thead>
-		
-		<c:if test="${test == 1 }">
-		<input type="hidden" name="test" value=1>
+	
 		<tbody>
 		   <c:forEach var="lecture" items="${ lecture }">
 		 <tr>

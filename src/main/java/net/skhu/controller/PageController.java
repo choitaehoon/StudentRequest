@@ -1,5 +1,6 @@
 package net.skhu.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,27 +29,32 @@ public class PageController
 	private LectureMapper lectureMapper;
 
 	@RequestMapping(value="check", method=RequestMethod.POST)
-	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo,@ModelAttribute("lecture") Lecture lecture1,@RequestParam("test") int test)
+	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
 	{
 		if(loginInfo.getUserType() == 1)
 			model.addAttribute("loginInfo",professorMapper.login(loginInfo));
 		else {
 		   model.addAttribute("loginInfo",studentMapper.login(loginInfo));
-		   List<Lecture> lecture =lectureMapper.findAll();
-		   model.addAttribute("lecture", lecture);
-		   model.addAttribute("test",test);
 		}
 		return "page/check";
 	}
 
 	@RequestMapping(value= {"main","find"})
-	public String mainGo(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)
-//			,@RequestParam("datea") ClassPlan date)
+	public String mainGo(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType
+			,@RequestParam("test") int test,@RequestParam("datea") String date)
 	{
 		if(userType == 1)
+		{
+			model.addAttribute("test",test);
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		}
 		else
+		{
+			model.addAttribute("test",test);
 			model.addAttribute("loginInfo",studentMapper.turnOver(id));
+			List<Lecture> lecture =lectureMapper.findDate(date);
+			model.addAttribute("lecture", lecture);
+		}
 //		System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(date.getClassDate()));
 		return "page/check";
 	}

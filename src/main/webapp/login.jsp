@@ -41,7 +41,7 @@ body
 		<hr />
 
 		<form method="post" action="page/check" >
-		<input type="hidden" name="test" value=0>
+		<input type="hidden" name="test" value="0">
 			<div class="form-group">
 				<label>교수</label> <input type="radio" name="userType" value="1" />
 				<label>학생</label><input type="radio" name="userType" value="2" />

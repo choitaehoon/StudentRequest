@@ -182,7 +182,9 @@ main section h1 {
       changeMonth: true,
       changeYear: true,
       nextText:'다음 달',
-      preText:'이전 달'
+      preText:'이전 달',
+      dateFormat: "yy-mm-dd"
+      
     });
   } );
   </script>
