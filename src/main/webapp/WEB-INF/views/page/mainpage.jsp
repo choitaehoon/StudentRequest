@@ -203,7 +203,7 @@ main section h1 {
 			</a>
 		</li>
 		<li>
-			<a href="javascript:void(0)">
+			<a href="question">
 				<i class="fa fa-question-circle"></i>
 				<span>질문페이지</span>
 			</a>
