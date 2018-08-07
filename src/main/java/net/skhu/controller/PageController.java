@@ -1,6 +1,5 @@
 package net.skhu.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +65,7 @@ public class PageController
 		model.addAttribute("userType",userType);
 		return "page/lectureRegister";
 	}
-	
+
 	@RequestMapping("question")
 	public String question(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id,
 			@RequestParam("userType") int userType)
@@ -76,7 +75,10 @@ public class PageController
 		else {
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 		}
+
 		model.addAttribute("classId",classId);
+		Lecture lecture =lectureMapper.findOne(classId);
+		model.addAttribute("lecture", lecture);
 		return "page/question";
 	}
 
