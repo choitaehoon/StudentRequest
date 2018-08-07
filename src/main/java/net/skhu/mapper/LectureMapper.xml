@@ -12,4 +12,8 @@
       SELECT * FROM lecture where classDate= #{classDate}
   </select>
   
+  <select id="findOne" resultType="Lecture">
+      SELECT * FROM lecture where classId= #{classId}
+  </select>
+  
 </mapper>
