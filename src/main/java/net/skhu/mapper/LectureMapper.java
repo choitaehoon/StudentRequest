@@ -10,4 +10,5 @@ import net.student.dto.Lecture;
 public interface LectureMapper {
 
 	List<Lecture> findAll();
+	List<Lecture> findDate();
 }

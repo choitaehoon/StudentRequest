@@ -150,7 +150,7 @@ main header {
   top: 0;
   left: 0;
   right: 0;
-  height: 400px;
+  height: 900px;
   background: url("http://www.blueb.co.kr/SRC2/_image/01.jpg");
   background-size: cover;
   background-position: 50% 50%;
@@ -162,7 +162,7 @@ main section {
   padding: 25px;
   font-family: helvetica;
   font-weight: lighter;
-  padding: 50px;
+  padding: 100px;
   margin: 150px 75px;
   transition: all 0.15s ease-in-out;
 }
@@ -180,7 +180,9 @@ main section h1 {
   $( function() {
     $( "#datepicker" ).datepicker({
       changeMonth: true,
-      changeYear: true
+      changeYear: true,
+      nextText:'다음 달',
+      preText:'이전 달'
     });
   } );
   </script>

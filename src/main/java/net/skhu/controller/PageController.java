@@ -28,7 +28,7 @@ public class PageController
 	private LectureMapper lectureMapper;
 
 	@RequestMapping(value="check", method=RequestMethod.POST)
-	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
+	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo,@ModelAttribute("lecture") Lecture lecture1)
 	{
 		if(loginInfo.getUserType() == 1)
 			model.addAttribute("loginInfo",professorMapper.login(loginInfo));
