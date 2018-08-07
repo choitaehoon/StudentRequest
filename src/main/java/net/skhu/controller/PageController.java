@@ -66,5 +66,18 @@ public class PageController
 		model.addAttribute("userType",userType);
 		return "page/lectureRegister";
 	}
+	
+	@RequestMapping("question")
+	public String question(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id,
+			@RequestParam("userType") int userType)
+	{
+		if(userType == 1)
+			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		else {
+		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+		}
+		model.addAttribute("classId",classId);
+		return "page/question";
+	}
 
 }

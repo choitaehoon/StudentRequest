@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <%@ include file="/WEB-INF/views/page/mainpage.jsp"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <c:url var="R" value="/" />
+=======
+<%@ include file="/WEB-INF/views/page/mainpage.jsp" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+>>>>>>> 6b9b39711d70abca39c6a3aa75f16ab2bbcd3104
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link
@@ -16,6 +21,7 @@
 	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="${R}res/common.js"></script>
 <style>
 body {
 	font-family: 굴림체;
@@ -51,6 +57,7 @@ select[name=od] {
 		</h5>
 		<p>날짜
 		<form action="find" method="post">
+<<<<<<< HEAD
 			<input type="hidden" name="id" value="${ loginInfo.id }"> 
 			<input type="hidden" name="userType" value="${ loginInfo.userType }">
 			<input type="hidden" name="test" value="1"> 
@@ -82,6 +89,39 @@ select[name=od] {
 					</tbody>
 				</table>
 			</c:if>
+=======
+		<input type="hidden" name="id" value="${ loginInfo.id }">
+		<input type="hidden" name="userType" value="${ loginInfo.userType }">
+		<input type="hidden" name="test" value="1">
+		<input type="text" id="datepicker" name="datea"><input type="submit" value="확인">
+		
+		<c:if test="${test eq 1 }">
+		<table class="table table-bordered table-condensed">
+		<thead>
+		  <tr>
+		     <th>수업</th>
+		     <th>교수님</th>
+		     <th>강의실번호</th>
+		     <th>시작시간</th>
+		     <th>끝나는시간</th>
+	      </tr>
+		</thead>
+	
+		<tbody>
+		   <c:forEach var="lecture" items="${ lecture }">
+		 <tr data-url="question?classId=${lecture.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}">
+		  <td>${lecture.className }</td>
+		  <td>${lecture.professorName }</td>
+		  <td>${lecture.roomId }</td>
+		  <td>${lecture.startClass }</td>
+		  <td>${lecture.endClass }</td>
+		 </tr>
+		</c:forEach>
+		</tbody>
+		</c:if>
+		
+		</table>
+>>>>>>> 6b9b39711d70abca39c6a3aa75f16ab2bbcd3104
 		</form>
 
 		<p>만들게 된 배경</p>
