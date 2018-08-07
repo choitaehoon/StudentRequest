@@ -1,6 +1,7 @@
 package net.skhu.controller;
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,7 +42,6 @@ public class LoginController
 	@RequestMapping(value="register", method=RequestMethod.POST)
 	public String membership(Model model,LoginInfo loginInfo)
 	{
-
 		//정보 미입력 에러 메세지
 		String message =CheckService.beforeInsert(loginInfo);
 		//학과정보 불러오기

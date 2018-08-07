@@ -28,7 +28,7 @@ public class PageController
 	private LectureMapper lectureMapper;
 
 	@RequestMapping(value="check", method=RequestMethod.POST)
-	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo,@ModelAttribute("lecture") Lecture lecture1)
+	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo,@ModelAttribute("lecture") Lecture lecture1,@RequestParam("test") int test)
 	{
 		if(loginInfo.getUserType() == 1)
 			model.addAttribute("loginInfo",professorMapper.login(loginInfo));
@@ -36,11 +36,10 @@ public class PageController
 		   model.addAttribute("loginInfo",studentMapper.login(loginInfo));
 		   List<Lecture> lecture =lectureMapper.findAll();
 		   model.addAttribute("lecture", lecture);
+		   model.addAttribute("test",test);
 		}
-
 		return "page/check";
 	}
-
 
 	@RequestMapping(value= {"main","find"})
 	public String mainGo(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)

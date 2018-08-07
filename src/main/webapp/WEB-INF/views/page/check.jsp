@@ -43,6 +43,9 @@
 		     <th>끝나는시간</th>
 	      </tr>
 		</thead>
+		
+		<c:if test="${test == 1 }">
+		<input type="hidden" name="test" value=1>
 		<tbody>
 		   <c:forEach var="lecture" items="${ lecture }">
 		 <tr>
@@ -51,10 +54,11 @@
 		  <td>${lecture.roomId }</td>
 		  <td>${lecture.startClass }</td>
 		  <td>${lecture.endClass }</td>
-		 
 		 </tr>
 		</c:forEach>
 		</tbody>
+		</c:if>
+		
 		</table>
 		</form>
 

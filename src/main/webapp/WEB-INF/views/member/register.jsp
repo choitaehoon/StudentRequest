@@ -55,11 +55,7 @@ function checkId(){
             }
         },
         error:function(){
-<<<<<<< HEAD
-                alert("에러입니다");
-=======
                 alert("버튼을 입력하세요");
->>>>>>> a3385610dbfb6013a6a6d31b0f0cb01b11df14a7
         }
     });
 };
@@ -116,11 +112,6 @@ function checkId(){
 				<form:select path="departmentId" class="form-control"
                    itemValue="departmentId" itemLabel="departmentName" items="${ departments }" />
             </div>
-			
-			<div class="form-group">
-				<label>교수</label> <input type="radio" name="userType" value="0" />
-				<label>학생</label><input type="radio" name="userType" value="1" />
-			</div>
 
 			<button type="submit" class="btn btn-primary">
 				<i class="glyphicon glyphicon-ok"></i> 회원가입

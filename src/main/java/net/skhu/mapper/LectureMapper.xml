@@ -9,6 +9,7 @@
   </select>
   
    <select id="findDate" resultType="Lecture">
-      SELECT * FROM lecture where classDate= #{classDate};
+      SELECT * FROM lecture where classDate= #{classDate}
   </select>
+  
 </mapper>
