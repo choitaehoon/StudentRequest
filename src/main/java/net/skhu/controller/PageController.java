@@ -82,4 +82,18 @@ public class PageController
 		return "page/question";
 	}
 
+	@RequestMapping("classPlan")
+	public String classPlan(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)
+	{
+		if(userType == 1)
+			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		else {
+		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+		}
+
+		List<Lecture> lecture = lectureMapper.findAll();
+		model.addAttribute("lecture", lecture);
+		return "page/classPlan";
+	}
+
 }

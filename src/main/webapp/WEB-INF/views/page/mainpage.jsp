@@ -215,7 +215,7 @@ main section h1 {
 			</a>
 		</li>
 		<li>
-			<a href="javascript:void(0)">
+			<a href="classPlan?id=${ loginInfo.id }&userType=${loginInfo.userType}">
 				<i class="fa fa-pencil"></i>
 				<span>진도페이지</span>
 			</a>
