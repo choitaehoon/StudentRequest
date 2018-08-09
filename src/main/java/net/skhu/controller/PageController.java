@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import net.skhu.mapper.ClassPlanMapper;
 import net.skhu.mapper.LectureMapper;
 import net.skhu.mapper.ProfessorMapper;
 import net.skhu.mapper.StudentMapper;
+import net.student.dto.ClassPlan;
 import net.student.dto.Lecture;
 import net.student.dto.LoginInfo;
 
@@ -26,6 +28,8 @@ public class PageController
 	private ProfessorMapper professorMapper;
 	@Autowired
 	private LectureMapper lectureMapper;
+	@Autowired
+	private ClassPlanMapper classPlanMapper;
 
 	@RequestMapping(value="check", method=RequestMethod.POST)
 	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
@@ -92,7 +96,7 @@ public class PageController
 	{
 		if(userType == 1)
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
-		else 
+		else
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 		return "page/classPlan";
 	}
@@ -124,12 +128,16 @@ public class PageController
 		else {
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 		}
-		
+
 		model.addAttribute("classId",classId);
-		List<Lecture> lecture = lectureMapper.findLecture(professorName);
+		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
+		model.addAttribute("classPlan",classPlan);
+
+		List<Lecture> lecture = lectureMapper.findByPname(professorName);
 		model.addAttribute("lecture",lecture);
+
 		model.addAttribute("professorName",professorName);
-		
+
 		return "page/planBoard";
 	}
 }
