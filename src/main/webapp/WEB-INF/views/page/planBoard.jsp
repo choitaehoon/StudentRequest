@@ -48,6 +48,7 @@ select[name=od] {
 <section>
 <h1>${ lecture.className }</h1>
 	<h5><i class="fa fa-paper-plane"></i> <span style="color:blue"> ${ loginInfo.name } </span>님 안녕하세요</h5>
+	<h6><span style="color:#FFE05C">${professorName}교수님</span></h6>
 </section>
 </main>
 </body>

@@ -85,18 +85,14 @@ select[name=od] {
 	
 		<tbody>
 		   <c:forEach var="lecture" items="${ lecture }">
-		      <tr data-url="planBoard?classId=${lecture.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}">
+		      <tr data-url="planBoard?classId=${lecture.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}&professorName=${lecture.professorName}">
 		       <td>${lecture.className }</td>
 		       <td>${lecture.professorName }</td>
-	
 		     </tr>
 		  </c:forEach>
 		</tbody>
 		
-		
 		</table>
-     
-  
 		</form>
 	
 	 

@@ -120,7 +120,7 @@ public class PageController
 	//진도계획 게시판
 	@RequestMapping("planBoard")
 	public String board(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id,
-			@RequestParam("userType") int userType)
+			@RequestParam("userType") int userType,@RequestParam("professorName") String professorName)
 	{
 		if(userType == 1)
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
@@ -131,6 +131,7 @@ public class PageController
 		model.addAttribute("classId",classId);
 		Lecture lecture =lectureMapper.findOne(classId);
 		model.addAttribute("lecture", lecture);
+		model.addAttribute("professorName",professorName);
 		return "page/planBoard";
 	}
 
