@@ -45,7 +45,7 @@ select[name=od] {
 <body>
 
 <main> 
-	
+	<section>
 
 
     <h1>진도계획</h1>
@@ -89,7 +89,7 @@ select[name=od] {
 		</form>
 	
 	 
-
+</section>
 
 </main>
 
