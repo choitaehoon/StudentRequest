@@ -3,12 +3,13 @@
              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.skhu.mapper.ClassPlanMapper">
 
-	<select id="findAll" resultType="classPlan">
+	<select id="findAll" resultType="ClassPlan">
 		SELECT * FROM classPlan
 	</select>
 
-	<select id="findClass" resultType="classPlan">
-		SELECT * FROM classPlan where classId= #{classId}
+	<select id="findClass" resultType="ClassPlan">
+		SELECT * from classPlan where classId = #{classId}
 	</select>
 
 </mapper>
+

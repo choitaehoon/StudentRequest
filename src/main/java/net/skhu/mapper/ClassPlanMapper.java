@@ -10,5 +10,5 @@ import net.student.dto.ClassPlan;
 public interface ClassPlanMapper {
 
 	List<ClassPlan> findAll();
-	List<ClassPlan> findClass(int classId);
+	ClassPlan findClass(int classId);
 }
