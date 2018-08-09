@@ -44,8 +44,9 @@ select[name=od] {
 </head>
 
 <body>
-<main> <header></header>
-	<section>
+
+<main> 
+	
 	
     <h1>${ lecture.className }</h1>
 	<h5><i class="fa fa-paper-plane"></i> <span style="color:blue"> ${ loginInfo.name } </span>님 안녕하세요</h5>
@@ -53,7 +54,8 @@ select[name=od] {
 	<p>여기에 질문하는 채팅창이 주어지고 오른쪽에는 질문을 한것중에 좋아요 갯수가 많이 있는 질문을 띄우는 창이 하나 더 있다.</p>
 	 
 
-</section>
+
 </main>
+
 </body>
 </html>

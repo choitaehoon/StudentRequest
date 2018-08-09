@@ -163,8 +163,8 @@ main section {
   padding: 25px;
   font-family: helvetica;
   font-weight: lighter;
-  padding: 100px;
-  margin: 150px 75px;
+  padding: 130px;
+  margin: 75px 200px;
   transition: all 0.15s ease-in-out;
 }
 main section:hover {
@@ -203,7 +203,7 @@ main section h1 {
 			</a>
 		</li>
 		<li>
-			<a href="question">
+			<a href="question?classId=0&id=${loginInfo.id}&userType=${loginInfo.userType}">
 				<i class="fa fa-question-circle"></i>
 				<span>질문페이지</span>
 			</a>

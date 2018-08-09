@@ -4,7 +4,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <style type="text/css">
 #center {
@@ -44,9 +43,11 @@ select[name=od] {
 </head>
 
 <body>
-<main> <header></header>
-	<section>
+
+<main> 
 	
+
+
     <h1>진도계획</h1>
 	<h5><i class="fa fa-paper-plane"></i> <span style="color:blue"> ${ loginInfo.name } </span>님 안녕하세요</h5>
 	<p>날짜
@@ -89,7 +90,8 @@ select[name=od] {
 	
 	 
 
-</section>
+
 </main>
+
 </body>
 </html>
