@@ -38,6 +38,7 @@ public class PageController
 		return "page/check";
 	}
 
+	//날짜에 맞은 수업 찾기위해
 	@RequestMapping(value= {"main","find"})
 	public String mainGo(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType
 			,@RequestParam("test") int test,@RequestParam("datea") String date)
@@ -58,6 +59,7 @@ public class PageController
 		return "page/check";
 	}
 
+	//수업등록
 	@RequestMapping(value="lectureRegister", method=RequestMethod.GET)
 	public String lectureR(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)
 	{
@@ -66,6 +68,8 @@ public class PageController
 		return "page/lectureRegister";
 	}
 
+
+	//질문페이지
 	@RequestMapping("question")
 	public String question(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id,
 			@RequestParam("userType") int userType)
@@ -82,7 +86,8 @@ public class PageController
 		return "page/question";
 	}
 
-	@RequestMapping("classPlan")
+	//진도계획 페이지
+	@RequestMapping(value="classPlan",method=RequestMethod.GET)
 	public String classPlan(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)
 	{
 		if(userType == 1)
@@ -91,9 +96,42 @@ public class PageController
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 		}
 
-		List<Lecture> lecture = lectureMapper.findAll();
-		model.addAttribute("lecture", lecture);
+
 		return "page/classPlan";
+	}
+
+
+	@RequestMapping(value="classPlan",method=RequestMethod.POST)
+	public String classPlan(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType,@RequestParam("datea") String date)
+	{
+		if(userType == 1)
+			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		else {
+		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+		}
+
+		List<Lecture> lecture =lectureMapper.findDate(date);
+		model.addAttribute("lecture", lecture);
+//		List<Lecture> lecture = lectureMapper.findAll();
+//		model.addAttribute("lecture", lecture);
+		return "page/classPlan";
+	}
+
+	//진도계획 게시판
+	@RequestMapping("planBoard")
+	public String board(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id,
+			@RequestParam("userType") int userType)
+	{
+		if(userType == 1)
+			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		else {
+		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+		}
+
+		model.addAttribute("classId",classId);
+		Lecture lecture =lectureMapper.findOne(classId);
+		model.addAttribute("lecture", lecture);
+		return "page/planBoard";
 	}
 
 }
