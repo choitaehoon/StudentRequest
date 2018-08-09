@@ -73,13 +73,12 @@ select[name=od] {
 		<input type="hidden" name="test" value="1">
 		<input type="text" id="datepicker" name="datea"><input type="submit" value="확인">
 		
-
-		
 		<table class="table table-bordered table-condensed">
 		<thead>
 		  <tr>
 		     <th>수업</th>
 		     <th>교수님</th>
+		     <th>과목</th>
 	      </tr>
 		</thead>
 	
@@ -88,6 +87,7 @@ select[name=od] {
 		      <tr data-url="planBoard?classId=${lecture.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}&professorName=${lecture.professorName}">
 		       <td>${lecture.className }</td>
 		       <td>${lecture.professorName }</td>
+		       <td>${lecture.body }</td>
 		     </tr>
 		  </c:forEach>
 		</tbody>

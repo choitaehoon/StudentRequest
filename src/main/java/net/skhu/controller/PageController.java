@@ -92,11 +92,8 @@ public class PageController
 	{
 		if(userType == 1)
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
-		else {
+		else 
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
-		}
-
-
 		return "page/classPlan";
 	}
 
@@ -127,12 +124,12 @@ public class PageController
 		else {
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 		}
-
+		
 		model.addAttribute("classId",classId);
-		Lecture lecture =lectureMapper.findOne(classId);
-		model.addAttribute("lecture", lecture);
+		List<Lecture> lecture = lectureMapper.findLecture(professorName);
+		model.addAttribute("lecture",lecture);
 		model.addAttribute("professorName",professorName);
+		
 		return "page/planBoard";
 	}
-
 }

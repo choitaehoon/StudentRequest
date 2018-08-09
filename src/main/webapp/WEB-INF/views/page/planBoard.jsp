@@ -46,9 +46,25 @@ select[name=od] {
 <body>
 <main>
 <section>
-<h1>${ lecture.className }</h1>
 	<h5><i class="fa fa-paper-plane"></i> <span style="color:blue"> ${ loginInfo.name } </span>님 안녕하세요</h5>
-	<h5><span style="color:#A85DFF">${professorName}교수님</span></h5>
+	<h1><span style="color:#A85DFF">${professorName}교수님</span></h1>
+	
+	<p>
+	<table class="table table-bordered table-condensed">
+		<thead>
+		<tr>
+		<c:forEach var="lecture" items="${ lecture }">
+		       <th>${lecture.body }</th>
+		  </c:forEach>
+		  </tr>
+		</thead>
+		
+		<tbody>
+		
+		 </tbody>
+	</table>
+	</p>
+	
 </section>
 </main>
 </body>

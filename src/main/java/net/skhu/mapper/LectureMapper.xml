@@ -16,4 +16,8 @@
       SELECT * FROM lecture where classId= #{classId}
   </select>
   
+  <select id="findLecture" resultType="Lecture">
+  	  select distinct body from lecture where professorName = #{professorName}
+  </select>
+  
 </mapper>
