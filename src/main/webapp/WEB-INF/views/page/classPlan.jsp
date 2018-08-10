@@ -2,13 +2,11 @@
 <%@ include file="/WEB-INF/views/page/mainpage.jsp" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <c:url var="R" value="/" />
-<html>
+
 
 <html>
 <head>
 <script src="${R}res/common.js"></script>
-<meta charset="UTF-8">
-
 <style type="text/css">
 #center {
 	position: absolute;
@@ -41,6 +39,7 @@ table.table {
 select[name=od] {
 	margin-right: 20px;
 }
+
 </style>
 </head>
 

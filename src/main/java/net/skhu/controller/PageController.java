@@ -130,8 +130,7 @@ public class PageController
 		}
 
 		model.addAttribute("classId",classId);
-//	    List<ClassPlan> classPlan = classPlanMapper.findAll();
-		ClassPlan classPlan = classPlanMapper.findClass(classId);
+		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
 		model.addAttribute("classPlan",classPlan);
 
 		List<Lecture> lecture = lectureMapper.findByPname(professorName);

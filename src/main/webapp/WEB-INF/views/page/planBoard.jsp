@@ -91,7 +91,7 @@ select[name=od] {
 			</thead>
 			<tbody>
 
-				<c:forEach var="ClassPlan" items="${ classPlan }">
+				<c:forEach var="classPlan" items="${ classPlan }">
 					<tr>
 
 					    <td>${ classPlan.planNo }</td>
