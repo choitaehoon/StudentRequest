@@ -3,10 +3,11 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <c:url var="R" value="/" />
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<html>
+<head>
 <script src="${R}res/common.js"></script>
+<meta charset="UTF-8">
 
 <style type="text/css">
 #center {
@@ -18,7 +19,6 @@
 	overflow: hidden;
 	margin-top: -200px;
 	margin-left: -150px;
-	
 }
 
 body {
@@ -41,7 +41,6 @@ table.table {
 select[name=od] {
 	margin-right: 20px;
 }
-
 </style>
 </head>
 

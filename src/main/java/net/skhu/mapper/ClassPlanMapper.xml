@@ -8,7 +8,7 @@
 	</select>
 
 	<select id="findClass" resultType="ClassPlan">
-		SELECT * from classPlan where classId = #{classId}
+		SELECT * FROM classPlan where classId = #{classId}
 	</select>
 
 </mapper>
