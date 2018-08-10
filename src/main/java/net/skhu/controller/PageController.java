@@ -2,6 +2,8 @@ package net.skhu.controller;
 
 import java.util.List;
 
+import javax.xml.ws.RequestWrapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -138,5 +140,17 @@ public class PageController
 		model.addAttribute("professorName",professorName);
 
 		return "page/planBoard";
+	}
+	
+	@RequestMapping("quiz")
+	public String quiz(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType) 
+	{
+		
+		if(userType == 1)
+			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		else
+		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+		
+		return "page/quiz";
 	}
 }

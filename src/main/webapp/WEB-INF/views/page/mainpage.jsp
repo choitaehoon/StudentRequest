@@ -209,7 +209,7 @@ main section h1 {
 			</a>
 		</li>
 		<li>
-			<a href="javascript:void(0)">
+			<a href="quiz?id=${ loginInfo.id }&userType=${loginInfo.userType}">
 				<i class="fa fa-paper-plane"></i>
 				<span>퀴즈페이지</span>
 			</a>

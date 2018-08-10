@@ -54,25 +54,8 @@ select[name=od] {
 			<i class="fa fa-paper-plane"></i> <span style="color: blue">
 				${ loginInfo.name } </span>님 안녕하세요
 		</h5>
-		<%-- 	<h1><span style="color:#A85DFF">${professorName}교수님</span></h1> --%>
 
-		<!-- 	<p> -->
-		<!-- 	<table class="table table-bordered table-condensed"> -->
-		<!-- 		<thead> -->
-		<!-- 		<tr> -->
-		<%-- 		<c:forEach var="lecture" items="${ lecture }"> --%>
-		<%-- 		       <th>${lecture.className }</th> --%>
-		<%-- 		  </c:forEach> --%>
-		<!-- 		  </tr> -->
-		<!-- 		</thead> -->
-
-		<!-- 		<tbody> -->
-
-		<!-- 		 </tbody> -->
-		<!-- 	</table> -->
-		<!-- 	</p> -->
-
-		<h2>게시판</h2>
+		<h2>최근 5개 목록</h2>
 		<table style="border: 1px solid #ccc">
 			<colgroup>
 				<col width="10%" />
