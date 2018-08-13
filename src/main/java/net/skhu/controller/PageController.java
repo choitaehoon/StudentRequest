@@ -136,10 +136,12 @@ public class PageController
 //		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
 		model.addAttribute("classPlan",classPlan);
 
+
 		List<Lecture> lecture = lectureMapper.findByPname(professorName);
 		model.addAttribute("lecture",lecture);
 		model.addAttribute("professorName",professorName);
 
+//		System.out.println(classPlan.get(0).getLecture().getProfessorName().toString());
 		return "page/planBoard";
 	}
 

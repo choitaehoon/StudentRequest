@@ -17,10 +17,13 @@
 	</resultMap>
 	
 	<resultMap type="ClassPlan" id="ClassPlan">
+	 <result column="planNo" property="planNo"/>
+	 <result column="classBody" property="classBody"/>
+	 <result column="classDate" property="classDate"/>
 	  <collection property="lecture" resultMap="Lecture"/>
 	</resultMap>
 	
-	<select id="findC"  resultType="ClassPlan">
+	<select id="findC" parameterType="ClassPlan" resultMap="ClassPlan">
 		SELECT c.*,l.professorName,l.className
 		FROM classPlan c, lecture l 
 		where c.classId=l.classId
