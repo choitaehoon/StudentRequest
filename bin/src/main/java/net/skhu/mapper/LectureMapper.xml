@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.skhu.mapper.LectureMapper">
+  <select id="findAll" resultType="Lecture">
+      SELECT * FROM lecture
+  </select>
+  
+   <select id="findDate" resultType="Lecture">
+      SELECT * FROM lecture where classDate= #{classDate}
+  </select>
+  
+  <select id="findOne" resultType="Lecture">
+      SELECT * FROM lecture where classId= #{classId}
+  </select>
+  
+  <select id="findByPname" resultType="Lecture">
+  	  select distinct className from lecture where professorName = #{professorName}
+  </select>
+  
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.skhu.mapper.ClassPlanMapper">
+
+	<select id="findAll" resultType="ClassPlan">
+		SELECT * FROM classPlan
+	</select>
+
+	<select id="findClass" resultType="ClassPlan">
+		SELECT * FROM classPlan where classId = #{classId}
+	</select>
+	
+	<resultMap type="Lecture" id="Lecture">
+	  <result column="professorName" property="professorName"/>
+	  <result column="className" property="className"/>
+	</resultMap>
+	
+	<resultMap type="ClassPlan" id="ClassPlan">
+	  <collection property="lecture" resultMap="Lecture"/>
+	</resultMap>
+	
+	<select id="findC"  resultType="ClassPlan">
+		SELECT c.*,l.professorName,l.className
+		FROM classPlan c, lecture l 
+		where c.classId=l.classId
+		AND c.classId = #{classId}
+	</select>
+
+</mapper>
+
