@@ -9,6 +9,9 @@ public class ClassPlan
 	int classId;
 	String classBody;
 	Date classDate;
+
+	Lecture lecture;
+
 	public int getPlanNo() {
 		return planNo;
 	}
@@ -38,6 +41,12 @@ public class ClassPlan
 	}
 	public void setClassDate(Date classDate) {
 		this.classDate = classDate;
+	}
+	public Lecture getLecture() {
+		return lecture;
+	}
+	public void setLecture(Lecture lecture) {
+		this.lecture = lecture;
 	}
 
 

@@ -58,6 +58,7 @@ select[name=od] {
 		<input type="hidden" name="test" value="1">
 		<input type="text" id="datepicker" name="datea"><input type="submit" value="확인">
 		
+		<c:if test="${test eq 1 }">
 		<table class="table table-bordered table-condensed">
 		<thead>
 		  <tr>
@@ -78,6 +79,7 @@ select[name=od] {
 		</tbody>
 		
 		</table>
+		</c:if>
 		</form>
 	
 	 

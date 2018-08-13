@@ -2,8 +2,6 @@ package net.skhu.controller;
 
 import java.util.List;
 
-import javax.xml.ws.RequestWrapper;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -105,22 +103,24 @@ public class PageController
 
 
 	@RequestMapping(value="classPlan",method=RequestMethod.POST)
-	public String classPlan(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType,@RequestParam("datea") String date)
+	public String classPlan(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType,@RequestParam("test") int test,
+			@RequestParam("datea") String date)
 	{
-		if(userType == 1)
+		if(userType == 1) {
+			model.addAttribute("test",test);
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		}
 		else {
+			model.addAttribute("test",test);
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 		}
 
 		List<Lecture> lecture =lectureMapper.findDate(date);
 		model.addAttribute("lecture", lecture);
-//		List<Lecture> lecture = lectureMapper.findAll();
-//		model.addAttribute("lecture", lecture);
 		return "page/classPlan";
 	}
 
-	//진도계획 게시판
+	//진도계획 게시판리스트페이지
 	@RequestMapping("planBoard")
 	public String board(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id,
 			@RequestParam("userType") int userType,@RequestParam("professorName") String professorName)
@@ -132,7 +132,8 @@ public class PageController
 		}
 
 		model.addAttribute("classId",classId);
-		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
+		List<ClassPlan> classPlan = classPlanMapper.findC(classId);
+//		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
 		model.addAttribute("classPlan",classPlan);
 
 		List<Lecture> lecture = lectureMapper.findByPname(professorName);
@@ -141,16 +142,21 @@ public class PageController
 
 		return "page/planBoard";
 	}
-	
+
+
+	//진도계획 게시판 세부내용 페이지
+
+
+	//퀴즈페이지
 	@RequestMapping("quiz")
-	public String quiz(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType) 
+	public String quiz(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)
 	{
-		
+
 		if(userType == 1)
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
 		else
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
-		
+
 		return "page/quiz";
 	}
 }
