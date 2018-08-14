@@ -7,24 +7,31 @@
 		SELECT * FROM classPlan
 	</select>
 
-	<select id="findClass" resultType="ClassPlan">
-		SELECT * FROM classPlan where classId = #{classId}
-	</select>
-	
 	<resultMap type="Lecture" id="Lecture">
 	  <result column="professorName" property="professorName"/>
 	  <result column="className" property="className"/>
 	</resultMap>
 	
 	<resultMap type="ClassPlan" id="ClassPlan">
+	 <result column="planNo" property="planNo"/>
+	 <result column="title" property="title"/>
+	 <result column="classBody" property="classBody"/>
+	 <result column="classDate" property="classDate"/>
 	  <collection property="lecture" resultMap="Lecture"/>
 	</resultMap>
 	
-	<select id="findC"  resultType="ClassPlan">
+	<select id="findClass" parameterType="ClassPlan" resultMap="ClassPlan">
 		SELECT c.*,l.professorName,l.className
 		FROM classPlan c, lecture l 
 		where c.classId=l.classId
 		AND c.classId = #{classId}
+	</select>
+	
+	<select id="findOne" parameterType="ClassPlan" resultMap="ClassPlan">
+		SELECT c.*,l.professorName,l.className
+		FROM classPlan c, lecture l 
+		where c.classId=l.classId
+		AND c.planNo = #{planNo}
 	</select>
 
 </mapper>

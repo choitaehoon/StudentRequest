@@ -11,5 +11,5 @@ public interface ClassPlanMapper {
 
 	List<ClassPlan> findAll();
 	List<ClassPlan> findClass(int classId);
-	List<ClassPlan> findC(int classId);
+	ClassPlan findOne(int planNo);
 }

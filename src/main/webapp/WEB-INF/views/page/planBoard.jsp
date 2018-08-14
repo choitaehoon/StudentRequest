@@ -1,16 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/page/mainpage.jsp"%>
+<%@ include file="/WEB-INF/views/page/classPlan.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        rel="stylesheet" media="screen">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="${R}res/common.js"></script>
-<meta charset="UTF-8">
 
 <style type="text/css">
 #center {
@@ -54,7 +57,10 @@ select[name=od] {
 			<i class="fa fa-paper-plane"></i> <span style="color: blue">
 				${ loginInfo.name } </span>님 안녕하세요
 		</h5>
-
+		<div class="pull-right">
+          <a href="planRegist?classId=${classId }&id=${ loginInfo.id }&userType=${loginInfo.userType}" class="btn btn-info">
+         <span class="glyphicon glyphicon-user"></span> 게시물 등록</a>
+       </div> 
 		<h2>최근 5개 목록</h2>
 		<table style="border: 1px solid #ccc">
 			<colgroup>
@@ -66,6 +72,7 @@ select[name=od] {
 			<thead>
 				<tr>
 					<th scope="col">글번호</th>
+					<th scope="col">제목</th>
 					<th scope="col">수업이름</th>
 					<th scope="col">교수님 이름</th>
 					<th scope="col">수업날짜</th>
@@ -75,9 +82,10 @@ select[name=od] {
 			<tbody>
 
 				<c:forEach var="classPlan" items="${ classPlan }">
-					<tr>
+					<tr data-url="planBody?planNo=${classPlan.planNo}&classId=${classPlan.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}">
 
 					    <td>${ classPlan.planNo }</td>
+					    <td>${ classPlan.title }</td>
 						<td>${ classPlan.lecture.className}</td>
 						<td>${ classPlan.lecture.professorName }</td>
 						<td>${ classPlan.classDate }</td>
