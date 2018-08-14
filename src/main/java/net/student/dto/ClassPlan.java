@@ -49,6 +49,10 @@ public class ClassPlan
 		this.lecture = lecture;
 	}
 
-
+	
+	public String toString()
+	{
+		return lecture.className+" "+lecture.professorName;
+	}
 
 }

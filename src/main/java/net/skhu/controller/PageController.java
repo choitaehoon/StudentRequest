@@ -136,6 +136,7 @@ public class PageController
 //		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
 		model.addAttribute("classPlan",classPlan);
 
+//		System.out.println(classPlan);
 		List<Lecture> lecture = lectureMapper.findByPname(professorName);
 		model.addAttribute("lecture",lecture);
 		model.addAttribute("professorName",professorName);
@@ -158,5 +159,16 @@ public class PageController
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 
 		return "page/quiz";
+	}
+	
+	@RequestMapping("quizQuestion")
+	public String quizQuestion(Model model, @RequestParam("id") int id, @RequestParam("userType") int userType)
+	{
+		if(userType == 1)
+			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		else
+		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+		
+		return "page/quizQuestion";
 	}
 }
