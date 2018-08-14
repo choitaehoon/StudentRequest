@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import net.skhu.mapper.ClassPlanMapper;
 import net.skhu.mapper.LectureMapper;
 import net.skhu.mapper.ProfessorMapper;
+import net.skhu.mapper.QuizMapper;
 import net.skhu.mapper.StudentMapper;
 import net.student.dto.ClassPlan;
 import net.student.dto.Lecture;
 import net.student.dto.LoginInfo;
+import net.student.dto.Quiz;
 
 @Controller
 @RequestMapping("page")
@@ -30,6 +32,8 @@ public class PageController
 	private LectureMapper lectureMapper;
 	@Autowired
 	private ClassPlanMapper classPlanMapper;
+	@Autowired
+	private QuizMapper quizMapper;
 
 	@RequestMapping(value="check", method=RequestMethod.POST)
 	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
@@ -135,17 +139,10 @@ public class PageController
 		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
 		model.addAttribute("classPlan",classPlan);
 
-<<<<<<< HEAD
-//		System.out.println(classPlan);
-		List<Lecture> lecture = lectureMapper.findByPname(professorName);
-		model.addAttribute("lecture",lecture);
-		model.addAttribute("professorName",professorName);
-=======
 
 //		List<Lecture> lecture = lectureMapper.findByPname(professorName);
 //		model.addAttribute("lecture",lecture);
 //		model.addAttribute("professorName",professorName);
->>>>>>> b831d9bb42379db77d96182b16eea457fb38351c
 
 		return "page/planBoard";
 	}
@@ -184,12 +181,13 @@ public class PageController
 	@RequestMapping("quiz")
 	public String quiz(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)
 	{
-
 		if(userType == 1)
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
 		else
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
-
+		
+		List<Quiz> quiz = quizMapper.findAll();
+		model.addAttribute("quiz",quiz);
 		return "page/quiz";
 	}
 	
