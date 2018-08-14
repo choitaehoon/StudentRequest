@@ -5,6 +5,7 @@ import java.util.Date;
 public class ClassPlan
 {
 	int planNo;
+	String title;
 	int professorId;
 	int classId;
 	String classBody;
@@ -17,6 +18,13 @@ public class ClassPlan
 	}
 	public void setPlanNo(int planNo) {
 		this.planNo = planNo;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public int getProfessorId() {
 		return professorId;

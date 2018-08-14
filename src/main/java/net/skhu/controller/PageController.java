@@ -123,7 +123,7 @@ public class PageController
 	//진도계획 게시판리스트페이지
 	@RequestMapping("planBoard")
 	public String board(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id,
-			@RequestParam("userType") int userType,@RequestParam("professorName") String professorName)
+			@RequestParam("userType") int userType)
 	{
 		if(userType == 1)
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
@@ -132,21 +132,45 @@ public class PageController
 		}
 
 		model.addAttribute("classId",classId);
-		List<ClassPlan> classPlan = classPlanMapper.findC(classId);
-//		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
+		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
 		model.addAttribute("classPlan",classPlan);
 
 
-		List<Lecture> lecture = lectureMapper.findByPname(professorName);
-		model.addAttribute("lecture",lecture);
-		model.addAttribute("professorName",professorName);
+//		List<Lecture> lecture = lectureMapper.findByPname(professorName);
+//		model.addAttribute("lecture",lecture);
+//		model.addAttribute("professorName",professorName);
 
-//		System.out.println(classPlan.get(0).getLecture().getProfessorName().toString());
 		return "page/planBoard";
 	}
 
 
 	//진도계획 게시판 세부내용 페이지
+	@RequestMapping("planBody")
+	public String planBody(Model model,@RequestParam("planNo") int planNo,@RequestParam("classId") int classId,@RequestParam("id") int id,
+			@RequestParam("userType") int userType)
+	{
+		if(userType == 1)
+			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		else {
+		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+		}
+
+		model.addAttribute("classId",classId);
+		ClassPlan classPlan = classPlanMapper.findOne(planNo);
+		model.addAttribute("classPlan",classPlan);
+
+		return "page/planBody";
+	}
+
+	//진도계획등록
+		@RequestMapping(value="planRegist", method=RequestMethod.GET)
+		public String planRegist(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		{
+			model.addAttribute("classId",classId);
+			model.addAttribute("id",id);
+			model.addAttribute("userType",userType);
+			return "page/planRegist";
+		}
 
 
 	//퀴즈페이지
