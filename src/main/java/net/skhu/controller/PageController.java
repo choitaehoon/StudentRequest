@@ -167,13 +167,31 @@ public class PageController
 	}
 
 	//진도계획등록
-		@RequestMapping(value="planRegist", method=RequestMethod.GET)
-		public String planRegist(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+	@RequestMapping(value="planRegist", method=RequestMethod.GET)
+	public String planRegist(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+	{
+
+		if(userType == 1)
+			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		else {
+		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+		}
+		List<Lecture> lectures= lectureMapper.findAll();
+		model.addAttribute("lectures",lectures);
+		model.addAttribute("ClassPlan",new ClassPlan());
+		model.addAttribute("classId",classId);
+
+		return "page/planRegist";
+	}
+
+	//진도계획등록
+		@RequestMapping(value="planRegist", method=RequestMethod.POST)
+		public String planR(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
 		{
-			model.addAttribute("classId",classId);
-			model.addAttribute("id",id);
-			model.addAttribute("userType",userType);
-			return "page/planRegist";
+			classPlan.setClassId(classId);
+			classPlanMapper.insert(classPlan);
+
+			return "redirect:page/planBoard?classId=classId&id=id&usertype=usertype";
 		}
 
 
@@ -185,12 +203,12 @@ public class PageController
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
 		else
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
-		
+
 		List<Quiz> quiz = quizMapper.findAll();
 		model.addAttribute("quiz",quiz);
 		return "page/quiz";
 	}
-	
+
 	@RequestMapping("quizQuestion")
 	public String quizQuestion(Model model, @RequestParam("id") int id, @RequestParam("userType") int userType)
 	{
@@ -198,7 +216,7 @@ public class PageController
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
 		else
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
-		
+
 		return "page/quizQuestion";
 	}
 }

@@ -14,8 +14,9 @@
 	
 	<resultMap type="ClassPlan" id="ClassPlan">
 	 <result column="planNo" property="planNo"/>
+	 <result column="classId" property="classId"/>
 	 <result column="title" property="title"/>
-	 <result column="classBody" property="classBody"/>
+	 <result column="planBody" property="planBody"/>
 	 <result column="classDate" property="classDate"/>
 	  <collection property="lecture" resultMap="Lecture"/>
 	</resultMap>
@@ -33,6 +34,12 @@
 		where c.classId=l.classId
 		AND c.planNo = #{planNo}
 	</select>
+	
+	<insert id="insert" >
+		INSERT ClassPlan (planNo, title, classId, planBody, professorId, classDate )
+		VALUES (#{planNo},#{title}, #{classId}, #{planBody}, #{professorId}, #{classDate}\)
+	</insert>
+	
 
 </mapper>
 

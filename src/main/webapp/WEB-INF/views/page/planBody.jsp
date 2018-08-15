@@ -28,22 +28,31 @@
             <div>
                 <table>
                     <tr>
-                        <th>게시물 번호</th>
-                        <td><input style="width: 500px" type="text" id="planNo" name="title" value="${classPlan.planNo }"/></td>
+                    <th style="width: 80px;">게시물번호</th>
+                    <td style="text-align: left;color: #555;">${classPlan.planNo }</td>
+<!--                         <th >게시물 번호</th> -->
+<%--                         <td><input style="width: 500px" type="text" id="planNo" name="title" value="${classPlan.planNo }"/></td> --%>
                     </tr>
                     <tr>
-                        <th>제목</th>
-                        <td><input style="width: 500px" type="text" id="title" name="title" value="${classPlan.title }"/></td>
+                    <th style="width: 50px;">제목</th>
+                    <td style="text-align: left;color: #555;">${classPlan.title }</td>
+<!--                         <th>제목</th> -->
+<%--                         <td><input style="width: 500px" type="text" id="title" name="title" value="${classPlan.title }"/></td> --%>
                     </tr>
                     <tr>
-                        <th>내용</th>
-                        <td><textarea style="width: 500px" rows="10" cols="10" id="content" name="content">
-                        <c:out value="${classPlan.classBody }"/></textarea></td>
+                    <th style="width: 70px;">작성날짜</th>
+                    <td style="text-align: left;color: #555;">${classPlan.classDate }</td>
+<!--                         <th>작성날짜</th> -->
+<%--                         <td><input style="width: 500px" type="text" id="classDate" name="classDate" value="${classPlan.classDate }"/></td> --%>
+             
                     </tr>
                     <tr>
-                        <th>작성날짜</th>
-                        <td><input style="width: 500px" type="text" id="className" name="className" value="${classPlan.classDate }"/></td>
+                     <th style="width: 50px;">내용</th>
+                     <td><textarea style="width: 500px" rows="10" cols="10" id="planBody" name="planBody">
+                        <c:out value="${classPlan.planBody }"/></textarea></td>
                     </tr>
+                    
+                    
                 </table>
                 <div>
                     <a href='#' onClick='fn_update()'>수정</a>
@@ -51,7 +60,11 @@
                     <a href='#' onClick='fn_relay()'>답변</a>                    
                 </div>
             </div>
+            <a href="planBoard?classId=${classId}&id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
+				class="glyphicon glyphicon-list"></i> 목록으로
+			</a>
         </div>
+        
      
     </form>
 <script>

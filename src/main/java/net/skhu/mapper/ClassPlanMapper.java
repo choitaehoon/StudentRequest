@@ -12,4 +12,5 @@ public interface ClassPlanMapper {
 	List<ClassPlan> findAll();
 	List<ClassPlan> findClass(int classId);
 	ClassPlan findOne(int planNo);
+	void insert(ClassPlan classPlan);
 }

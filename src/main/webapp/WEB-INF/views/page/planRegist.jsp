@@ -49,7 +49,7 @@ input.form-control, select.form-control {
 	<div id=center class="container main">
 		<h1>진도 계획 등록</h1>
 		<hr />
-		<form method="post">
+		<form:form method="post" modelAttribute="classPlan">
 			
 			<div class="form-group">
 				<label>제목</label>
@@ -58,17 +58,19 @@ input.form-control, select.form-control {
 			<label>내용</label> 
 			<div class="form-group">
 				
-				<textarea style="width:400px" rows="10" cols="10" id="classBody" name="classBody"></textarea>
+				<textarea style="width:400px" rows="10" cols="10" id="planBody" name="planBody"></textarea>
             </div>
-			
+            
+ 
+           
 			<button type="submit" class="btn btn-primary">
 				<i class="glyphicon glyphicon-ok"></i> 등록
 			</button>
 
-			<a href="planBoard?classId=${classId}&id=${id}&userType=${userType}" class="btn btn-default"> <i
-				class="glyphicon glyphicon-home"></i> 이전페이지
+			<a href="planBoard?classId=${classId}&id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
+				class="glyphicon glyphicon-chevron-left	"></i> 이전페이지
 			</a>
-		</form>
+		</form:form>
 
 
 	</div>

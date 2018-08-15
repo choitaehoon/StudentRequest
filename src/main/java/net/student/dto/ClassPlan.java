@@ -8,7 +8,7 @@ public class ClassPlan
 	String title;
 	int professorId;
 	int classId;
-	String classBody;
+	String planBody;
 	Date classDate;
 
 	Lecture lecture;
@@ -38,11 +38,12 @@ public class ClassPlan
 	public void setClassId(int classId) {
 		this.classId = classId;
 	}
-	public String getClassBody() {
-		return classBody;
+
+	public String getPlanBody() {
+		return planBody;
 	}
-	public void setClassBody(String classBody) {
-		this.classBody = classBody;
+	public void setPlanBody(String planBody) {
+		this.planBody = planBody;
 	}
 	public Date getClassDate() {
 		return classDate;
@@ -57,7 +58,8 @@ public class ClassPlan
 		this.lecture = lecture;
 	}
 
-	
+
+	@Override
 	public String toString()
 	{
 		return lecture.className+" "+lecture.professorName;
