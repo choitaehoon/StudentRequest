@@ -36,8 +36,8 @@
 	</select>
 	
 	<insert id="insert" >
-		INSERT ClassPlan (planNo, title, classId, planBody, professorId, classDate )
-		VALUES (#{planNo},#{title}, #{classId}, #{planBody}, #{professorId}, #{classDate}\)
+		INSERT ClassPlan ( title, classId, planBody, professorId, classDate )
+		VALUES (#{title}, #{classId}, #{planBody}, #{professorId}, #{classDate})
 	</insert>
 	
 

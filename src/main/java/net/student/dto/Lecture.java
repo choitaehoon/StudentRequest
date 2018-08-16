@@ -7,6 +7,7 @@ public class Lecture {
 	int classId;
 	String className;
 	String professorName;
+	int professor_id;
 	int planNo;
 	int roomId;
 	String body;
@@ -45,6 +46,13 @@ public class Lecture {
 	}
 	public void setProfessorName(String professorName) {
 		this.professorName = professorName;
+	}
+
+	public int getProfessor_id() {
+		return professor_id;
+	}
+	public void setProfessor_id(int professor_id) {
+		this.professor_id = professor_id;
 	}
 	public String getBody() {
 		return body;

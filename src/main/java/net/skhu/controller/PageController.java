@@ -18,6 +18,7 @@ import net.skhu.mapper.StudentMapper;
 import net.student.dto.ClassPlan;
 import net.student.dto.Lecture;
 import net.student.dto.LoginInfo;
+import net.student.dto.Professor;
 import net.student.dto.Quiz;
 
 @Controller
@@ -176,8 +177,11 @@ public class PageController
 		else {
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 		}
+		List<Professor> professors= professorMapper.findAll();
+		model.addAttribute("professors",professors);
 		List<Lecture> lectures= lectureMapper.findAll();
 		model.addAttribute("lectures",lectures);
+
 		model.addAttribute("ClassPlan",new ClassPlan());
 		model.addAttribute("classId",classId);
 
@@ -188,7 +192,7 @@ public class PageController
 		@RequestMapping(value="planRegist", method=RequestMethod.POST)
 		public String planR(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
 		{
-			classPlan.setClassId(classId);
+
 			classPlanMapper.insert(classPlan);
 
 			return "redirect:page/planBoard?classId=classId&id=id&usertype=usertype";
