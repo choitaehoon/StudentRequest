@@ -2,6 +2,8 @@ package net.skhu.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -182,7 +184,7 @@ public class PageController
 		List<Lecture> lectures= lectureMapper.findAll();
 		model.addAttribute("lectures",lectures);
 
-		model.addAttribute("ClassPlan",new ClassPlan());
+		model.addAttribute("classPlan",new ClassPlan());
 		model.addAttribute("classId",classId);
 
 		return "page/planRegist";
@@ -190,12 +192,19 @@ public class PageController
 
 	//진도계획등록
 		@RequestMapping(value="planRegist", method=RequestMethod.POST)
-		public String planR(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		public String planR(Model model,HttpServletRequest request,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
 		{
+
+			if(userType == 1)
+				model.addAttribute("loginInfo",professorMapper.turnOver(id));
+			else {
+			   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+			}
 
 			classPlanMapper.insert(classPlan);
 
-			return "redirect:page/planBoard?classId=classId&id=id&usertype=usertype";
+			model.addAttribute("classId",classId);
+			return "redirect:planBoad";
 		}
 
 

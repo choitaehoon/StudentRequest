@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/page/mainpage.jsp" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <c:url var="R" value="/" />
 
 <!DOCTYPE html>
@@ -66,17 +68,17 @@ input.form-control, select.form-control {
             <div class="form-group">
 				<label>교수이름</label>
 				<form:select path="professorId" class="form-control"
-                   itemValue="id" itemLabel="name" items="${ professors }" />
+                  itemValue="id" itemLabel="name" items="${ professors }" /> 
 			</div>
 			
 			<div class="form-group">
 				<label>수업이름</label>
 				<form:select path="classId" class="form-control"
-                   itemValue="classId" itemLabel="className" items="${ lectures }" />
+                itemValue="classId" itemLabel="className" items="${ lectures }" />
 			</div>
  
            
-			<button type="submit" class="btn btn-primary">
+			<button type="submit" class="btn btn-primary" >
 				<i class="glyphicon glyphicon-ok"></i> 등록
 			</button>
 
