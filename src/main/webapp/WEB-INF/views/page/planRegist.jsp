@@ -53,7 +53,10 @@ input.form-control, select.form-control {
 		<hr />
 		
 		<form:form method="post" modelAttribute="classPlan">
-		   
+		    <input type="hidden" name="id" value="${ loginInfo.id }"> 
+			<input type="hidden" name="userType" value="${ loginInfo.userType }">
+			<input type="hidden" name="classId" value="${ classPlan.classId }">
+			
 			<div class="form-group">
 				<label>제목</label>
 				<input type="text"  class="form-control" id="title" name="title"/>
@@ -79,11 +82,11 @@ input.form-control, select.form-control {
  
            
 			<button type="submit" class="btn btn-primary" >
-				<i class="glyphicon glyphicon-ok"></i> 등록
+				<i class="glyphicon glyphicon-ok"></i> 게시글 등록
 			</button>
 
 			<a href="planBoard?classId=${classId}&id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
-				class="glyphicon glyphicon-chevron-left	"></i> 이전페이지
+				class="glyphicon glyphicon-list"></i> 목록으로
 			</a>
 		</form:form>
 

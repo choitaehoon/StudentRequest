@@ -2,8 +2,6 @@ package net.skhu.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -128,7 +126,10 @@ public class PageController
 	}
 
 	//진도계획 게시판리스트페이지
-	@RequestMapping("planBoard")
+	@RequestMapping(value="planBoard",method = RequestMethod.GET)
+//페이지네이션구현중
+//	public String board(Model model,Pagination pagination,@RequestParam("classId") int classId,@RequestParam("id") int id,
+//			@RequestParam("userType") int userType)
 	public String board(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id,
 			@RequestParam("userType") int userType)
 	{
@@ -138,7 +139,9 @@ public class PageController
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 		}
 
+//		pagination.setRecordCount(classPlanMapper.count());
 		model.addAttribute("classId",classId);
+//		List<ClassPlan> classPlan = classPlanMapper.findClass(classId,pagination);
 		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
 		model.addAttribute("classPlan",classPlan);
 
@@ -192,7 +195,7 @@ public class PageController
 
 	//진도계획등록
 		@RequestMapping(value="planRegist", method=RequestMethod.POST)
-		public String planR(Model model,HttpServletRequest request,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		public String planR(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
 		{
 
 			if(userType == 1)
@@ -204,7 +207,7 @@ public class PageController
 			classPlanMapper.insert(classPlan);
 
 			model.addAttribute("classId",classId);
-			return "redirect:planBoad";
+			return "page/planBoard";
 		}
 
 

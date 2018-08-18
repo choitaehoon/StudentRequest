@@ -22,11 +22,15 @@
 	</resultMap>
 	
 	<select id="findClass" parameterType="ClassPlan" resultMap="ClassPlan">
+<!-- 	페이지네이션구현중 -->
+<!-- 	    <bind name="start" value="(currentPage-1)*pageSize"/> -->
+<!-- 	    <bind name="end" value="pageSize"/> -->
 		SELECT c.*,l.professorName,l.className
 		FROM classPlan c, lecture l 
 		where c.classId=l.classId
 		AND c.classId = #{classId}
 		order by c.planNo desc
+<!-- 		limit ${start} , ${end} -->
 	</select>
 	
 	<select id="findOne" parameterType="ClassPlan" resultMap="ClassPlan">
@@ -40,6 +44,10 @@
 		INSERT ClassPlan ( title, classId, planBody, professorId)
 		VALUES (#{title}, #{classId}, #{planBody}, #{professorId})
 	</insert>
+	
+	<select id="count" resultType="int">
+	  select count(*) from classPlan
+	</select>
 	
 
 </mapper>
