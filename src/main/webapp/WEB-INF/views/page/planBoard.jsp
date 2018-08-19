@@ -48,11 +48,23 @@ select[name=od] {
 	margin-right: 20px;
 }
 </style>
+
+<!-- 페이지네이션구현중 -->
+<!-- <script> -->
+<!--  	$(function() { -->
+<!--  		$("div.pagination a").click(function() { -->
+<!-- 			$("input[name=pg]").val($(this).attr("data-page")); -->
+<!-- 			$('#id').val(); -->
+<!--  			$("form").submit(); -->
+<!--  		}); -->
+<!--  	}); -->
+<!-- </script> -->
 </head>
 <body>
 	<main>
 	<section>
-		<h1>진도 계획</h1>
+	   <form method="get">
+		<h1>진도 계획 리스트</h1>
 		<h5>
 			<i class="fa fa-paper-plane"></i> <span style="color: blue">
 				${ loginInfo.name } </span>님 안녕하세요
@@ -62,6 +74,11 @@ select[name=od] {
          <span class="glyphicon glyphicon-user"></span> 게시물 등록</a>
        </div> 
 		<h2>최근 5개 목록</h2>
+		
+<!-- 		페이지네이션구현중 -->
+<!-- 		    <input type="hidden" name="pg" value="1" /> -->
+		    <input type="hidden" name="id" value="${ loginInfo.id }"> 
+			<input type="hidden" name="userType" value="${ loginInfo.userType }">
 		<table style="border: 1px solid #ccc">
 			<colgroup>
 				<col width="10%" />
@@ -95,7 +112,16 @@ select[name=od] {
 
 			</tbody>
 		</table>
-
+<!-- 		페이지네이션구현중 -->
+<!-- 		<div class="pagination pagination-small pagination-centered"> -->
+<!-- 				<ul> -->
+<%-- 					<c:forEach var="page" items="${ pagination.pageList }"> --%>
+<%-- 						<li class='${ page.cssClass }'><a --%>
+<%-- 							data-page="${ page.number }">${ page.label }</a></li> --%>
+<%-- 					</c:forEach> --%>
+<!-- 				</ul> -->
+<!-- 			</div> -->
+       </form>
 	</section>
 	</main>
 </body>
