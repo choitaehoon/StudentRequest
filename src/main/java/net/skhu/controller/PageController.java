@@ -20,6 +20,7 @@ import net.skhu.mapper.StudentMapper;
 import net.student.dto.ClassPlan;
 import net.student.dto.Lecture;
 import net.student.dto.LoginInfo;
+import net.student.dto.Pagination;
 import net.student.dto.Professor;
 import net.student.dto.Quiz;
 
@@ -210,14 +211,15 @@ public class PageController
 
 	//퀴즈페이지
 	@RequestMapping("quiz")
-	public String quiz(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType)
+	public String quiz(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType,Pagination pagination)
 	{
 		if(userType == 1)
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
 		else
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 
-		List<Quiz> quiz = quizMapper.findAll();
+		pagination.setRecordCount(quizMapper.selectCount());
+		List<Quiz> quiz = quizMapper.findAll(pagination);
 		model.addAttribute("quiz",quiz);
 		return "page/quiz";
 	}

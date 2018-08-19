@@ -4,6 +4,13 @@
 
 <mapper namespace="net.skhu.mapper.QuizMapper">
 	<select id="findAll" resultType="Quiz">
+	<bind name="start" value="(currentPage-1)*pageSize"/>
+	<bind name="end" value="pageSize"/>
 	select * from quiz
+	limit ${start} , ${end}
+	</select>
+	
+	<select id="selectCount" resultType="int">
+	select count(*) from quiz
 	</select>
 </mapper>

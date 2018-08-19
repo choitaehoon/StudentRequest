@@ -7,7 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<title>퀴즈 페이지</title>
+<link
+	href="http://nethna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"
+	rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <style type="text/css">
 #center {
 	position: absolute;
@@ -36,6 +39,16 @@ float:left;
 }
 
 </style>
+
+<script>
+	$(function() {
+		$("div.pagination a").click(function() {
+			$("input[name=pg]").val($(this).attr("data-page"));
+ 			$('#loginId').val();
+			$("form").submit();
+		});
+	});
+</script>
 </head>
 <body>
 <main>
@@ -68,7 +81,7 @@ float:left;
 			</thead>
 			
 			<tbody>
-				<c:forEach var="quiz" items="${quiz }">
+				<c:forEach var="quiz" items="${quiz}">
 					<tr data-url="">
 						<td>${quiz.quizId}</td>
 						<td>${quiz.quizBody }</td>
@@ -78,13 +91,26 @@ float:left;
 				</c:forEach>
 			</tbody>
 		</table>
-		
+		<form>
+		<input type="hidden" name="pg" value="1" />
+		<input type="hidden" name="id" id="id" value="${loginInfo.id}">
+		<input type="hidden" name="userType" id="userType" value="${loginInfo.userType}">
+			<div class="pagination pagination-small pagination-centered">
+				<ul>
+					<c:forEach var="page" items="${ pagination.pageList }">
+						<li class='${ page.cssClass }'><a
+							data-page="${ page.number }">${ page.label }</a></li>
+					</c:forEach>
+				</ul>
+			</div>
+		</form>
 	</div>
+	
+	
 	<div class="main_right_btn">
 		등록된 문제
 		<hr/>
 	</div>
-	
 	
 	
 	</section>
