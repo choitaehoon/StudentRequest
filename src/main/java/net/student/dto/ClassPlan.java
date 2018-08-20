@@ -12,7 +12,7 @@ public class ClassPlan
 	Timestamp classDate;
 
 	Lecture lecture;
-
+	Pagination pagination;
 	public int getPlanNo() {
 		return planNo;
 	}
@@ -60,6 +60,12 @@ public class ClassPlan
 	}
 
 
+	public Pagination getPagination() {
+		return pagination;
+	}
+	public void setPagination(Pagination pagination) {
+		this.pagination = pagination;
+	}
 	@Override
 	public String toString()
 	{

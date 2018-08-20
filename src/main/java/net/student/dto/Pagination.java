@@ -3,21 +3,13 @@ package net.student.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-public class Pagination 
-{
-=======
+
 public class Pagination {
->>>>>>> a8e0652484ab577b828346cd52adc61f7658badf
 	int currentPage = 1;
 	int pageSize = 5;
 	int recordCount;
 	int id;
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> a8e0652484ab577b828346cd52adc61f7658badf
 	public int getCurrentPage() {
 		return currentPage;
 	}
@@ -36,24 +28,14 @@ public class Pagination {
 	public void setRecordCount(int recordCount) {
 		this.recordCount = recordCount;
 	}
-<<<<<<< HEAD
-	
-	
-=======
 
-
->>>>>>> a8e0652484ab577b828346cd52adc61f7658badf
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> a8e0652484ab577b828346cd52adc61f7658badf
 	/* query string과 같은 이름의 메소드들 구현 */
     public int getPg() {
         return currentPage;
@@ -66,13 +48,7 @@ public class Pagination {
     public int getSz() {
         return pageSize;
     }
-<<<<<<< HEAD
-    
-	
-=======
 
-
->>>>>>> a8e0652484ab577b828346cd52adc61f7658badf
 	public void setSz(int pageSize) {
         this.pageSize = pageSize;
     }

@@ -49,16 +49,15 @@ select[name=od] {
 }
 </style>
 
-<!-- 페이지네이션구현중 -->
-<!-- <script> -->
-<!--  	$(function() { -->
-<!--  		$("div.pagination a").click(function() { -->
-<!-- 			$("input[name=pg]").val($(this).attr("data-page")); -->
-<!-- 			$('#id').val(); -->
-<!--  			$("form").submit(); -->
-<!--  		}); -->
-<!--  	}); -->
-<!-- </script> -->
+<script>
+  	$(function() { 
+		$("div.pagination a").click(function() { 
+  			$("input[name=pg]").val($(this).attr("data-page")); 
+  			$('#loginId').val(); 
+  			$("form").submit(); 
+  		}); 
+  	}); 
+</script> 
 </head>
 <body>
 	<main>
@@ -75,10 +74,6 @@ select[name=od] {
        </div> 
 		<h2>최근 5개 목록</h2>
 		
-<!-- 		페이지네이션구현중 -->
-<!-- 		    <input type="hidden" name="pg" value="1" /> -->
-		    <input type="hidden" name="id" value="${ loginInfo.id }"> 
-			<input type="hidden" name="userType" value="${ loginInfo.userType }">
 		<table style="border: 1px solid #ccc">
 			<colgroup>
 				<col width="10%" />
@@ -112,15 +107,21 @@ select[name=od] {
 
 			</tbody>
 		</table>
-<!-- 		페이지네이션구현중 -->
-<!-- 		<div class="pagination pagination-small pagination-centered"> -->
-<!-- 				<ul> -->
-<%-- 					<c:forEach var="page" items="${ pagination.pageList }"> --%>
-<%-- 						<li class='${ page.cssClass }'><a --%>
-<%-- 							data-page="${ page.number }">${ page.label }</a></li> --%>
-<%-- 					</c:forEach> --%>
-<!-- 				</ul> -->
-<!-- 			</div> -->
+		<a href="classPlan?id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
+				class="glyphicon glyphicon-list"></i> 이전페이지
+			</a>
+        <input type="hidden" name="pg" value="1" />
+		<input type="hidden" name="id" id="id" value="${loginInfo.id}">
+		<input type="hidden" name="userType" id="userType" value="${loginInfo.userType}">
+
+			<div class="pagination pagination-small pagination-centered">
+				<ul>
+					<c:forEach var="page" items="${ pagination.pageList }">
+						<li class='${ page.cssClass }'><a
+							data-page="${ page.number }">${ page.label }</a></li>
+					</c:forEach>
+				</ul>
+			</div>
        </form>
 	</section>
 	</main>

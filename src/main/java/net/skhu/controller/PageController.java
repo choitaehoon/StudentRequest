@@ -129,9 +129,7 @@ public class PageController
 	//진도계획 게시판리스트페이지
 	@RequestMapping(value="planBoard",method = RequestMethod.GET)
 //페이지네이션구현중
-//	public String board(Model model,Pagination pagination,@RequestParam("classId") int classId,@RequestParam("id") int id,
-//			@RequestParam("userType") int userType)
-	public String board(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id,
+	public String board(Model model,Pagination pagination,@RequestParam("classId") int classId,@RequestParam("id") int id,
 			@RequestParam("userType") int userType)
 	{
 		if(userType == 1)
@@ -140,16 +138,13 @@ public class PageController
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 		}
 
-//		pagination.setRecordCount(classPlanMapper.count());
+		pagination.setRecordCount(classPlanMapper.count());
 		model.addAttribute("classId",classId);
-//		List<ClassPlan> classPlan = classPlanMapper.findClass(classId,pagination);
-		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
+		List<ClassPlan> classPlan = classPlanMapper.findClass(classId,pagination);
+//		List<ClassPlan> classPlan = classPlanMapper.findAll(pagination);
+//		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
 		model.addAttribute("classPlan",classPlan);
 
-
-//		List<Lecture> lecture = lectureMapper.findByPname(professorName);
-//		model.addAttribute("lecture",lecture);
-//		model.addAttribute("professorName",professorName);
 
 		return "page/planBoard";
 	}
@@ -205,9 +200,10 @@ public class PageController
 			   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 			}
 
+			model.addAttribute("classId",classId);
 			classPlanMapper.insert(classPlan);
 
-			model.addAttribute("classId",classId);
+
 			return "page/planBoard";
 		}
 

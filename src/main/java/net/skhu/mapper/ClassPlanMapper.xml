@@ -4,12 +4,23 @@
 <mapper namespace="net.skhu.mapper.ClassPlanMapper">
 
 	<select id="findAll" resultType="ClassPlan">
+	   <bind name="start" value="(currentPage-1)*pageSize"/>
+	    <bind name="end" value="pageSize"/>
+	 
 		SELECT * FROM classPlan
+		order by planNo desc
+		limit ${start} , ${end}
+		
 	</select>
 
 	<resultMap type="Lecture" id="Lecture">
 	  <result column="professorName" property="professorName"/>
 	  <result column="className" property="className"/>
+	</resultMap>
+	
+	<resultMap type="Pagination" id="Pagination">
+	  <result column="currentPage" property="currentPage"/>
+	  <result column="pageSize" property="pageSize"/>
 	</resultMap>
 	
 	<resultMap type="ClassPlan" id="ClassPlan">
@@ -18,19 +29,21 @@
 	 <result column="title" property="title"/>
 	 <result column="planBody" property="planBody"/>
 	 <result column="classDate" property="classDate"/>
+	 
 	  <collection property="lecture" resultMap="Lecture"/>
+	  <collection property="Pagination" resultMap="Pagination"/>
 	</resultMap>
 	
 	<select id="findClass" parameterType="ClassPlan" resultMap="ClassPlan">
 <!-- 	페이지네이션구현중 -->
-<!-- 	    <bind name="start" value="(currentPage-1)*pageSize"/> -->
-<!-- 	    <bind name="end" value="pageSize"/> -->
+	    <bind name="start" value="(currentPage-1)*pageSize"/>
+	    <bind name="end" value="pageSize"/>
 		SELECT c.*,l.professorName,l.className
 		FROM classPlan c, lecture l 
 		where c.classId=l.classId
 		AND c.classId = #{classId}
 		order by c.planNo desc
-<!-- 		limit ${start} , ${end} -->
+		limit ${start} , ${end}
 	</select>
 	
 	<select id="findOne" parameterType="ClassPlan" resultMap="ClassPlan">
