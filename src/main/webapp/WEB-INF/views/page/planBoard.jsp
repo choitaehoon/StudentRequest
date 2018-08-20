@@ -107,20 +107,24 @@ select[name=od] {
 
 			</tbody>
 		</table>
-		<a href="classPlan?id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
-				class="glyphicon glyphicon-list"></i> 이전페이지
-			</a>
+		
         <input type="hidden" name="pg" value="1" />
+        <input type="hidden" name="classId" value="${classId }" />
 		<input type="hidden" name="id" id="id" value="${loginInfo.id}">
 		<input type="hidden" name="userType" id="userType" value="${loginInfo.userType}">
 
 			<div class="pagination pagination-small pagination-centered">
-				<ul>
+			
 					<c:forEach var="page" items="${ pagination.pageList }">
 						<li class='${ page.cssClass }'><a
 							data-page="${ page.number }">${ page.label }</a></li>
 					</c:forEach>
-				</ul>
+				
+			</div>
+			<div>
+			<a href="classPlan?id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
+				class="glyphicon glyphicon-list"></i> 이전페이지
+			</a>
 			</div>
        </form>
 	</section>

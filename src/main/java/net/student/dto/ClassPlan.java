@@ -10,6 +10,8 @@ public class ClassPlan
 	int classId;
 	String planBody;
 	Timestamp classDate;
+	Lecture professorName;
+	Lecture className;
 
 	Lecture lecture;
 	Pagination pagination;

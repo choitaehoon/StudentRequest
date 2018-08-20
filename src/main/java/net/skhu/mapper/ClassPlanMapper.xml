@@ -18,10 +18,6 @@
 	  <result column="className" property="className"/>
 	</resultMap>
 	
-	<resultMap type="Pagination" id="Pagination">
-	  <result column="currentPage" property="currentPage"/>
-	  <result column="pageSize" property="pageSize"/>
-	</resultMap>
 	
 	<resultMap type="ClassPlan" id="ClassPlan">
 	 <result column="planNo" property="planNo"/>
@@ -31,7 +27,6 @@
 	 <result column="classDate" property="classDate"/>
 	 
 	  <collection property="lecture" resultMap="Lecture"/>
-	  <collection property="Pagination" resultMap="Pagination"/>
 	</resultMap>
 	
 	<select id="findClass" parameterType="ClassPlan" resultMap="ClassPlan">
