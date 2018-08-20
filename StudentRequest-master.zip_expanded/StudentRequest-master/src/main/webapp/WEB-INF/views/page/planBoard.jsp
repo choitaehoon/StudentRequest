@@ -98,8 +98,8 @@ select[name=od] {
 
 					    <td>${ classPlan.planNo }</td>
 					    <td>${ classPlan.title }</td>
-						<td>${ classPlan.lecture.className}</td>
-						<td>${ classPlan.lecture.professorName }</td>
+						<td>${ classPlan.className}</td>
+						<td>${ classPlan.professorName }</td>
 						<td>${ classPlan.classDate }</td>
 					</tr>
 				</c:forEach>

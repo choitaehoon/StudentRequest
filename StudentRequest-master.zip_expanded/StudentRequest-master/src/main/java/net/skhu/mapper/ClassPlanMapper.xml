@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+             "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.skhu.mapper.ClassPlanMapper">
+
+	<select id="findAll" resultType="ClassPlan">
+	   <bind name="start" value="(currentPage-1)*pageSize"/>
+	    <bind name="end" value="pageSize"/>
+	 
+<!-- 		SELECT * FROM classPlan
+		order by planNo desc
+		limit ${start} , ${end}
+		 -->
+		SELECT c.*,l.className,l.professorName
+		FROM classPlan c, lecture l 
+		where c.classId=l.classId
+		order by c.planNo desc
+		limit ${start} , ${end}
+		
+	</select>
+
+	<resultMap type="Lecture" id="Lecture">
+	  <result column="professorName" property="professorName"/>
+	  <result column="className" property="className"/>
+	</resultMap>
+	
+	
+	<resultMap type="ClassPlan" id="ClassPlan">
+	 <result column="planNo" property="planNo"/>
+	 <result column="classId" property="classId"/>
+	 <result column="title" property="title"/>
+	 <result column="planBody" property="planBody"/>
+	 <result column="classDate" property="classDate"/>
+	 
+	  <collection property="lecture" resultMap="Lecture"/>
+	</resultMap>
+	
+	<select id="findClass" parameterType="ClassPlan" resultMap="ClassPlan">
+<!-- 	페이지네이션구현중 -->
+	    <bind name="start" value="(currentPage-1)*pageSize"/>
+	    <bind name="end" value="pageSize"/>
+		SELECT c.planNo,c.title,l.className,l.professorName,c.classDate
+		FROM classPlan c, lecture l 
+		where c.classId=l.classId
+		AND c.classId = #{classId}
+		order by c.planNo desc
+		limit ${start} , ${end}
+	</select>
+	
+	<select id="findOne" parameterType="ClassPlan" resultMap="ClassPlan">
+		SELECT c.*,l.professorName,l.className
+		FROM classPlan c, lecture l 
+		where c.classId=l.classId
+		AND c.planNo = #{planNo}
+	</select>
+	
+	<insert id="insert" >
+		INSERT ClassPlan ( title, classId, planBody, professorId)
+		VALUES (#{title}, #{classId}, #{planBody}, #{professorId})
+	</insert>
+	
+	<select id="count" resultType="int">
+	  select count(*) from classPlan
+	</select>
+	
+
+</mapper>
+
