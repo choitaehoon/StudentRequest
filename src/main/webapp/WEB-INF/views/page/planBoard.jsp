@@ -50,7 +50,7 @@ select[name=od] {
   			$("input[name=pg]").val($(this).attr("data-page")); 
   			$('#loginId').val(); 
   			$("form").submit(); 
-  		}); 
+  		});
   	}); 
 </script> 
 </head>
@@ -90,7 +90,7 @@ select[name=od] {
 			<tbody>
 
 				<c:forEach var="classPlan" items="${ classPlan }">
-					<tr data-url="planBody?planNo=${classPlan.planNo}&classId=${classPlan.classId}&id=${loginInfo.id}">
+					<tr data-url="planBody?planNo=${classPlan.planNo}&classId=${classPlan.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}">
 
 					    <td>${ classPlan.planNo }</td>
 					    <td>${ classPlan.title }</td>

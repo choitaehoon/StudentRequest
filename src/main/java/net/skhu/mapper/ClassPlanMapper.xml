@@ -10,42 +10,38 @@
 		SELECT c.*,l.className,l.professorName
 		FROM classPlan c, lecture l 
 		where c.classId=l.classId
-		AND c.classId = #{classId}
 		order by c.planNo desc
 		limit #{pagination.start} , #{pagination.pageSize}
 <!-- 		LIMIT ${start} , ${end} -->
 		
 	</select>
 
-	<resultMap type="Lecture" id="Lecture">
-	  <result column="professorName" property="professorName"/>
-	  <result column="className" property="className"/>
-	</resultMap>
+<!-- 	<resultMap type="Lecture" id="Lecture"> -->
+<!-- 	  <result column="professorName" property="professorName"/> -->
+<!-- 	  <result column="className" property="className"/> -->
+<!-- 	</resultMap> -->
 	
 	
-	<resultMap type="ClassPlan" id="ClassPlan">
-	 <result column="planNo" property="planNo"/>
-	 <result column="classId" property="classId"/>
-	 <result column="title" property="title"/>
-	 <result column="planBody" property="planBody"/>
-	 <result column="classDate" property="classDate"/>
+<!-- 	<resultMap type="ClassPlan" id="ClassPlan"> -->
+<!-- 	 <result column="planNo" property="planNo"/> -->
+<!-- 	 <result column="classId" property="classId"/> -->
+<!-- 	 <result column="title" property="title"/> -->
+<!-- 	 <result column="planBody" property="planBody"/> -->
+<!-- 	 <result column="classDate" property="classDate"/> -->
 	 
-	  <collection property="lecture" resultMap="Lecture"/>
-	</resultMap>
+<!-- 	  <collection property="lecture" resultMap="Lecture"/> -->
+<!-- 	</resultMap> -->
 	
-	<select id="findClass" parameterType="ClassPlan" resultMap="ClassPlan">
-<!-- 	페이지네이션구현중 -->
-	    <bind name="start" value="(currentPage-1)*pageSize"/>
-	    <bind name="end" value="pageSize"/>
-		SELECT c.*,l.professorName,l.className
+	<select id="findClass" resultType="ClassPlan">
+		SELECT c.*,l.className,l.professorName
 		FROM classPlan c, lecture l 
 		where c.classId=l.classId
 		AND c.classId = #{classId}
 		order by c.planNo desc
-		limit ${start} , ${end}
+		limit #{pagination.start} , #{pagination.pageSize}
 	</select>
 	
-	<select id="findOne" parameterType="ClassPlan" resultMap="ClassPlan">
+	<select id="findOne" resultType="ClassPlan">
 		SELECT c.*,l.professorName,l.className
 		FROM classPlan c, lecture l 
 		where c.classId=l.classId
@@ -58,7 +54,7 @@
 	</insert>
 	
 	<select id="count" resultType="int">
-	  select count(*) from classPlan
+	  select count(*) from classPlan where classId=#{classId}
 	</select>
 	
 
