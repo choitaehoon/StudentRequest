@@ -74,7 +74,9 @@ body
 		</form>
 
 		<hr/>
-		
+		<c:if test="${ not empty error }">
+			<div class="alert alert-error"><span style="color:red">${ error }</span></div>
+		</c:if>
 	</div>
 </body>
 </html>

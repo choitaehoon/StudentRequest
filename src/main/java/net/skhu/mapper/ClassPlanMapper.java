@@ -15,5 +15,6 @@ public interface ClassPlanMapper {
 	List<ClassPlan> findClass(@Param("classId") int classId,@Param("pagination") Pagination pagination);
 	ClassPlan findOne(int planNo);
 	void insert(ClassPlan classPlan);
+	void delete(int planNo);
 	int count(int classId);
 }

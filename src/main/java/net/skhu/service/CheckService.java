@@ -18,8 +18,6 @@ public class CheckService
 			if(StringUtils.isEmpty(s))
 				return "이름을 입력하세요";
 
-
-
 			s=loginInfo.getPassword();
 			if(StringUtils.isEmpty(s))
 				return "비밀번호를 입력하세요";

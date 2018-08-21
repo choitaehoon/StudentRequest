@@ -53,6 +53,10 @@
 		VALUES (#{title}, #{classId}, #{planBody}, #{professorId})
 	</insert>
 	
+	<delete id="delete">
+		delete from classPlan where planNo = #{planNo}
+	</delete>
+	
 	<select id="count" resultType="int">
 	  select count(*) from classPlan where classId=#{classId}
 	</select>

@@ -170,7 +170,7 @@ public class PageController
 
 	//진도계획등록
 	@RequestMapping(value="planRegist", method=RequestMethod.GET)
-	public String planRegist(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+	public String planRegist1(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
 	{
 
 		if(userType == 1)
@@ -191,7 +191,7 @@ public class PageController
 
 	//진도계획등록
 		@RequestMapping(value="planRegist", method=RequestMethod.POST)
-		public String planR(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		public String planRegist2(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
 		{
 
 			if(userType == 1)
@@ -204,6 +204,13 @@ public class PageController
 			classPlanMapper.insert(classPlan);
 
 
+			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
+		}
+
+		@RequestMapping("delete")
+		public String planDelete(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		{
+			classPlanMapper.delete(classPlan.getPlanNo());
 			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
 

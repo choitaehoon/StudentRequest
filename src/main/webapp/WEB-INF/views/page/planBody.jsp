@@ -53,7 +53,8 @@
                 <div>
                     <a href='#' onClick='fn_update()'>수정</a>
                     <a href='#?' onClick='fn_cancel()'>목록</a>
-                    <a href='#' onClick='fn_relay()'>답변</a>                    
+                    <a href='#' onClick='fn_relay()'>답변</a>
+                    <a href='#' onClick='fn_delete()'>삭제</a>                    
                 </div>
             </div>
             <a href="planBoard?classId=${classId}&id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
@@ -85,6 +86,16 @@ function fn_update(){
  
 //답변
 function fn_relay(){
+    
+    var form = document.getElementById("viewForm");
+    
+    form.action = "<c:url value='/board/relayForm.do'/>";
+    form.submit();
+    
+}
+
+//삭제
+function fn_delete(){
     
     var form = document.getElementById("viewForm");
     
