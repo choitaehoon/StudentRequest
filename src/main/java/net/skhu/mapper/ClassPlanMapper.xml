@@ -4,14 +4,16 @@
 <mapper namespace="net.skhu.mapper.ClassPlanMapper">
 
 	<select id="findAll"  resultType="ClassPlan">
-	   <bind name="start" value="(currentPage-1)*pageSize"/>
-	    <bind name="end" value="pageSize"/>
+<!-- 	   <bind name="start" value="(#{pagination.currentPage}-1)*#{pagination.pageSize}"/> -->
+<!-- 	   <bind name="end" value="#{pagination.pageSize}"/> -->
 	 
 		SELECT c.*,l.className,l.professorName
 		FROM classPlan c, lecture l 
 		where c.classId=l.classId
+		AND c.classId = #{classId}
 		order by c.planNo desc
-		limit ${start} , ${end}
+		limit #{pagination.start} , #{pagination.pageSize}
+<!-- 		LIMIT ${start} , ${end} -->
 		
 	</select>
 

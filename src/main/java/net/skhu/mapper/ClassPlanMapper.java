@@ -11,7 +11,7 @@ import net.student.dto.Pagination;
 @Mapper
 public interface ClassPlanMapper {
 
-	List<ClassPlan> findAll(Pagination pagination);
+	List<ClassPlan> findAll(@Param("classId") int classId,@Param("pagination") Pagination pagination);
 //	List<ClassPlan> findAll(HashMap<Integer, Pagination> map);
 	List<ClassPlan> findClass(@Param("classId") int classId,@Param("pagination")Pagination pagination);
 	List<ClassPlan> findClass(int classId);

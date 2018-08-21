@@ -141,8 +141,8 @@ public class PageController
 		pagination.setRecordCount(classPlanMapper.count());
 		model.addAttribute("classId",classId);
 //		List<ClassPlan> classPlan = classPlanMapper.findClass(classId,pagination);
-
-		List<ClassPlan> classPlan = classPlanMapper.findAll(pagination);
+		pagination.setStart((pagination.getCurrentPage()-1)*pagination.getPageSize());
+		List<ClassPlan> classPlan = classPlanMapper.findAll(classId,pagination);
 //		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
 		model.addAttribute("classPlan",classPlan);
 
