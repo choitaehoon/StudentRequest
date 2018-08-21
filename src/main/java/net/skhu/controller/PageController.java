@@ -107,7 +107,7 @@ public class PageController
 		return "page/classPlan";
 	}
 
-
+	//진도계획 페이지
 	@RequestMapping(value="classPlan",method=RequestMethod.POST)
 	public String classPlan(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType,@RequestParam("test") int test,
 			@RequestParam("datea") String date)
@@ -128,7 +128,6 @@ public class PageController
 
 	//진도계획 게시판리스트페이지
 	@RequestMapping(value="planBoard",method = RequestMethod.GET)
-//페이지네이션구현중
 	public String board(Model model,Pagination pagination,@RequestParam("classId") int classId,@RequestParam("id") int id,
 			@RequestParam("userType") int userType)
 	{
@@ -181,7 +180,7 @@ public class PageController
 		}
 		List<Professor> professors= professorMapper.findAll();
 		model.addAttribute("professors",professors);
-		List<Lecture> lectures= lectureMapper.findAll();
+		Lecture lectures= lectureMapper.findOne(classId);
 		model.addAttribute("lectures",lectures);
 
 		model.addAttribute("classPlan",new ClassPlan());
@@ -205,7 +204,7 @@ public class PageController
 			classPlanMapper.insert(classPlan);
 
 
-			return "page/planRegist";
+			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
 
 

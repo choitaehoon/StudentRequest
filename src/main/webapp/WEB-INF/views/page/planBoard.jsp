@@ -58,18 +58,18 @@ select[name=od] {
 	<main>
 	<section>
 	   <form method="get">
-	   
+	   <div>
 		<h1>진도 계획 리스트</h1>
 		<h5>
 			<i class="fa fa-paper-plane"></i> <span style="color: blue">
 				${ loginInfo.name } </span>님 안녕하세요
 		</h5>
-		<div class="pull-right">
+		</div>
+		<div >
           <a href="planRegist?classId=${classId }&id=${ loginInfo.id }&userType=${loginInfo.userType}" class="btn btn-info">
-         <span class="glyphicon glyphicon-user"></span> 게시물 등록</a>
-       </div> 
-		<h2>최근 5개 목록</h2>
-		
+           <span class="glyphicon glyphicon-user"></span> 게시물 등록</a>
+         </div>
+
 		<table style="border: 1px solid #ccc">
 			<colgroup>
 				<col width="10%" />
@@ -83,14 +83,14 @@ select[name=od] {
 					<th scope="col">제목</th>
 					<th scope="col">수업이름</th>
 					<th scope="col">교수님 이름</th>
-					<th scope="col">수업날짜</th>
+					<th scope="col">작성일자</th>
 
 				</tr>
 			</thead>
 			<tbody>
 
 				<c:forEach var="classPlan" items="${ classPlan }">
-					<tr data-url="planBody?planNo=${classPlan.planNo}&classId=${classPlan.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}">
+					<tr data-url="planBody?pg=${pagination.currentPage}&planNo=${classPlan.planNo}&classId=${classPlan.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}">
 
 					    <td>${ classPlan.planNo }</td>
 					    <td>${ classPlan.title }</td>
@@ -119,8 +119,7 @@ select[name=od] {
 			</div>
 			<div>
 			<a href="classPlan?id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
-				class="glyphicon glyphicon-list"></i> 이전페이지
-			</a>
+				class="glyphicon glyphicon-list"></i> 이전페이지</a>
 			</div>
        </form>
 	</section>
