@@ -3,12 +3,14 @@
              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.skhu.mapper.ClassPlanMapper">
 
-	<select id="findAll" resultType="ClassPlan">
+	<select id="findAll"  resultType="ClassPlan">
 	   <bind name="start" value="(currentPage-1)*pageSize"/>
 	    <bind name="end" value="pageSize"/>
 	 
-		SELECT * FROM classPlan
-		order by planNo desc
+		SELECT c.*,l.className,l.professorName
+		FROM classPlan c, lecture l 
+		where c.classId=l.classId
+		order by c.planNo desc
 		limit ${start} , ${end}
 		
 	</select>

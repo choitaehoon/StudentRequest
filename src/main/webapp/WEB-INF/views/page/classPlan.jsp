@@ -18,28 +18,22 @@
 	margin-top: -200px;
 	margin-left: -150px;
 }
-
 body {
 	font-family: 굴림체;
 }
-
 thead th {
 	background-color: #eee;
 }
-
 tr:hover td {
 	background-color: #ffe;
 	cursor: pointer;
 }
-
 table.table {
 	margin-top: 5px;
 }
-
 select[name=od] {
 	margin-right: 20px;
 }
-
 </style>
 </head>
 
@@ -70,7 +64,7 @@ select[name=od] {
 	
 		<tbody>
 		   <c:forEach var="lecture" items="${ lecture }">
-		      <tr data-url="planBoard?classId=${lecture.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}&professorName=${lecture.professorName}">
+		      <tr data-url="planBoard?classId=${lecture.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}">
 		       <td>${lecture.className }</td>
 		       <td>${lecture.professorName }</td>
 		       

@@ -26,24 +26,19 @@
 	margin-top: -200px;
 	margin-left: -150px;
 }
-
 body {
 	font-family: 굴림체;
 }
-
 thead th {
 	background-color: #eee;
 }
-
 tr:hover td {
 	background-color: #ffe;
 	cursor: pointer;
 }
-
 table.table {
 	margin-top: 5px;
 }
-
 select[name=od] {
 	margin-right: 20px;
 }
@@ -63,6 +58,7 @@ select[name=od] {
 	<main>
 	<section>
 	   <form method="get">
+	   
 		<h1>진도 계획 리스트</h1>
 		<h5>
 			<i class="fa fa-paper-plane"></i> <span style="color: blue">
@@ -94,12 +90,12 @@ select[name=od] {
 			<tbody>
 
 				<c:forEach var="classPlan" items="${ classPlan }">
-					<tr data-url="planBody?planNo=${classPlan.planNo}&classId=${classPlan.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}">
+					<tr data-url="planBody?planNo=${classPlan.planNo}&classId=${classPlan.classId}&id=${loginInfo.id}">
 
 					    <td>${ classPlan.planNo }</td>
 					    <td>${ classPlan.title }</td>
-						<td>${ classPlan.lecture.className}</td>
-						<td>${ classPlan.lecture.professorName }</td>
+						<td>${ classPlan.className}</td>
+						<td>${ classPlan.professorName }</td>
 						<td>${ classPlan.classDate }</td>
 					</tr>
 				</c:forEach>

@@ -12,7 +12,7 @@ import net.student.dto.Pagination;
 public interface ClassPlanMapper {
 
 	List<ClassPlan> findAll(Pagination pagination);
-	//페이지네이션구현중
+//	List<ClassPlan> findAll(HashMap<Integer, Pagination> map);
 	List<ClassPlan> findClass(@Param("classId") int classId,@Param("pagination")Pagination pagination);
 	List<ClassPlan> findClass(int classId);
 	ClassPlan findOne(int planNo);
