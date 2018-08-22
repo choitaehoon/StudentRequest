@@ -104,7 +104,7 @@ public class PageController
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
 		else
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
-		return "page/classPlan";
+		return "page/classPlan/classPlan";
 	}
 
 	//진도계획 페이지
@@ -123,7 +123,7 @@ public class PageController
 
 		List<Lecture> lecture =lectureMapper.findDate(date);
 		model.addAttribute("lecture", lecture);
-		return "page/classPlan";
+		return "page/classPlan/classPlan";
 	}
 
 	//진도계획 게시판리스트페이지
@@ -146,7 +146,7 @@ public class PageController
 		model.addAttribute("classPlan",classPlan);
 
 
-		return "page/planBoard";
+		return "page/classPlan/planBoard";
 	}
 
 
@@ -165,7 +165,7 @@ public class PageController
 		ClassPlan classPlan = classPlanMapper.findOne(planNo);
 		model.addAttribute("classPlan",classPlan);
 
-		return "page/planBody";
+		return "page/classPlan/planBody";
 	}
 
 	//진도계획등록
@@ -186,7 +186,7 @@ public class PageController
 		model.addAttribute("classPlan",new ClassPlan());
 		model.addAttribute("classId",classId);
 
-		return "page/planRegist";
+		return "page/classPlan/planRegist";
 	}
 
 	//진도계획등록
@@ -204,7 +204,7 @@ public class PageController
 			classPlanMapper.insert(classPlan);
 
 
-			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
+			return "redirect:/page/classPlan/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
 		//진도계획수정
 		@RequestMapping(value="planEdit",method=RequestMethod.GET)
@@ -217,7 +217,7 @@ public class PageController
 			model.addAttribute("classId",classId);
 			ClassPlan classPlan = classPlanMapper.findOne(planNo);
 			model.addAttribute("classPlan",classPlan);
-			return "page/planEdit";
+			return "page/classPlan/planEdit";
 		}
 		//진도계획수정
 		@RequestMapping(value="planEdit",method=RequestMethod.POST)
@@ -226,7 +226,7 @@ public class PageController
 			model.addAttribute("classId",classId);
 			classPlanMapper.update(classPlan.getTitle(),classPlan.getPlanBody(),classPlan.getPlanNo());
 
-			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
+			return "redirect:/page/classPlan/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
 
 		//진도계획삭제
@@ -235,7 +235,7 @@ public class PageController
 		{
 			model.addAttribute("classId",classId);
 			classPlanMapper.delete(planNo);
-			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
+			return "redirect:/page/classPlan/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
 
 

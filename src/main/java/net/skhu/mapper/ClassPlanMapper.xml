@@ -55,7 +55,7 @@
           planBody = #{planBody},
           classDate = NOW()         
       WHERE planNo = #{planNo}
-  </update>
+   </update>
 	
 	<insert id="insert" >
 		INSERT ClassPlan ( title, classId, planBody, professorId)
