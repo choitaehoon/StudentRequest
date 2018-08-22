@@ -34,3 +34,4 @@ Servers/Pivotal tc Server Developer Edition v3.2-config/jmxremote.password
 Servers/Pivotal tc Server Developer Edition v3.2-config/server.xml
 Servers/Pivotal tc Server Developer Edition v3.2-config/tomcat-users.xml
 Servers/Pivotal tc Server Developer Edition v3.2-config/web.xml
+pom.xml

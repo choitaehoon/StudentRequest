@@ -63,16 +63,7 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<!-- <version>2.0.3.RELEASE</version> -->
 		</dependency>
-
-
-		<!-- 웹소켓 -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.springframework</groupId> -->
-		<!-- <artifactId>spring-websocket</artifactId> -->
-		<!-- <version>4.1.6.RELEASE</version> -->
-		<!-- </dependency> -->
-
-		<dependency>
+	<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
