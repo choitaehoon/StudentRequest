@@ -206,11 +206,35 @@ public class PageController
 
 			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
-
-		@RequestMapping("delete")
-		public String planDelete(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		//진도계획수정
+		@RequestMapping(value="planEdit",method=RequestMethod.GET)
+		public String planEdit(Model model,@RequestParam("planNo") int planNo,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
 		{
-			classPlanMapper.delete(classPlan.getPlanNo());
+			if(userType == 1)
+				model.addAttribute("loginInfo",professorMapper.turnOver(id));
+			else
+			   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+			model.addAttribute("classId",classId);
+			ClassPlan classPlan = classPlanMapper.findOne(planNo);
+			model.addAttribute("classPlan",classPlan);
+			return "page/planEdit";
+		}
+		//진도계획수정
+		@RequestMapping(value="planEdit",method=RequestMethod.POST)
+		public String planUpdate(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		{
+			model.addAttribute("classId",classId);
+			classPlanMapper.update(classPlan.getTitle(),classPlan.getPlanBody(),classPlan.getPlanNo());
+
+			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
+		}
+
+		//진도계획삭제
+		@RequestMapping(value="delete",method=RequestMethod.GET)
+		public String planDelete(Model model,@RequestParam("planNo") int planNo,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		{
+			model.addAttribute("classId",classId);
+			classPlanMapper.delete(planNo);
 			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
 

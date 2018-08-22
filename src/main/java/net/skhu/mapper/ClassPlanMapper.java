@@ -16,5 +16,6 @@ public interface ClassPlanMapper {
 	ClassPlan findOne(int planNo);
 	void insert(ClassPlan classPlan);
 	void delete(int planNo);
+	void update(@Param("title") String title,@Param("planBody") String planBody,@Param("planNo") int planNo);
 	int count(int classId);
 }

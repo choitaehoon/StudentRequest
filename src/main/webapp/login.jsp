@@ -33,7 +33,8 @@ body
 </style>
 <title>login</title>
 </head>
-
+<main>
+<section>
 <body>
 	<div id=center class="container main">
 		<H3>SKHU.DO</H3>
@@ -79,4 +80,6 @@ body
 		</c:if>
 	</div>
 </body>
+</section>
+</main>
 </html>

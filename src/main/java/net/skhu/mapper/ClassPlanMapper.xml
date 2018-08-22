@@ -48,6 +48,15 @@
 		AND c.planNo = #{planNo}
 	</select>
 	
+	<update id="update">
+    UPDATE classPlan
+      SET
+          title = #{title},
+          planBody = #{planBody},
+          classDate = NOW()         
+      WHERE planNo = #{planNo}
+  </update>
+	
 	<insert id="insert" >
 		INSERT ClassPlan ( title, classId, planBody, professorId)
 		VALUES (#{title}, #{classId}, #{planBody}, #{professorId})
