@@ -44,7 +44,7 @@ float:left;
 	$(function() {
 		$("div.pagination a").click(function() {
 			$("input[name=pg]").val($(this).attr("data-page"));
- 			$('#loginId').val();
+//  			$('#loginId').val();
 			$("form").submit();
 		});
 	});
@@ -59,7 +59,7 @@ float:left;
 	<c:if test="${loginInfo.userType eq 1}">
 	<a id="createButton" class="btn btn-primary pull-right" href="quizQuestion?id=${ loginInfo.id }&userType=${ loginInfo.userType }"> <i class="glyphicon glyphicon-plus"></i> 퀴즈 등록 </a>
 	</c:if>
-	<a id="createButton" class="btn btn-primary pull-right" href=""> <i class="glyphicon glyphicon-search"></i> 한눈에 보기 </a>
+	<a id="createButton" class="btn btn-primary pull-right" href="chart?id=${ loginInfo.id }&userType=${ loginInfo.userType }"> <i class="glyphicon glyphicon-search"></i> 한눈에 보기 </a>
 	<br/>
 	<br/>
 <!-- 	<table> -->
@@ -96,12 +96,10 @@ float:left;
 		<input type="hidden" name="id" id="id" value="${loginInfo.id}">
 		<input type="hidden" name="userType" id="userType" value="${loginInfo.userType}">
 			<div class="pagination pagination-small pagination-centered">
-				<ul>
 					<c:forEach var="page" items="${ pagination.pageList }">
 						<li class='${ page.cssClass }'><a
 							data-page="${ page.number }">${ page.label }</a></li>
 					</c:forEach>
-				</ul>
 			</div>
 		</form>
 	</div>

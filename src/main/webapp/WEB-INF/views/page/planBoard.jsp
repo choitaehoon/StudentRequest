@@ -53,7 +53,7 @@ select[name=od] {
   	$(function() { 
 		$("div.pagination a").click(function() { 
   			$("input[name=pg]").val($(this).attr("data-page")); 
-  			$('#loginId').val(); 
+//   			$('#loginId').val(); 
   			$("form").submit(); 
   		}); 
   	}); 

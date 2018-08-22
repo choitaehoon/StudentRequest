@@ -233,4 +233,15 @@ public class PageController
 
 		return "page/quizQuestion";
 	}
+	
+	@RequestMapping("chart")
+	public String chart(Model model, @RequestParam("id") int id, @RequestParam("userType") int userType)
+	{
+		if(userType == 1)
+			model.addAttribute("loginInfo",professorMapper.turnOver(id));
+		else
+		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+		
+		return "page/chart";
+	}
 }
