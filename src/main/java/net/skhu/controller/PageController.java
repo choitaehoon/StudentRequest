@@ -104,10 +104,10 @@ public class PageController
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
 		else
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
-		return "page/classPlan";
+		return "page/classPlan/classPlan";
 	}
 
-
+	//진도계획 페이지
 	@RequestMapping(value="classPlan",method=RequestMethod.POST)
 	public String classPlan(Model model,@RequestParam("id") int id, @RequestParam("userType") int userType,@RequestParam("test") int test,
 			@RequestParam("datea") String date)
@@ -123,12 +123,11 @@ public class PageController
 
 		List<Lecture> lecture =lectureMapper.findDate(date);
 		model.addAttribute("lecture", lecture);
-		return "page/classPlan";
+		return "page/classPlan/classPlan";
 	}
 
 	//진도계획 게시판리스트페이지
 	@RequestMapping(value="planBoard",method = RequestMethod.GET)
-//페이지네이션구현중
 	public String board(Model model,Pagination pagination,@RequestParam("classId") int classId,@RequestParam("id") int id,
 			@RequestParam("userType") int userType)
 	{
@@ -138,15 +137,16 @@ public class PageController
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 		}
 
-		pagination.setRecordCount(classPlanMapper.count());
 		model.addAttribute("classId",classId);
+
+		pagination.setRecordCount(classPlanMapper.count(classId));
+		pagination.setStart((pagination.getCurrentPage()-1)*pagination.getPageSize());
 		List<ClassPlan> classPlan = classPlanMapper.findClass(classId,pagination);
-//		List<ClassPlan> classPlan = classPlanMapper.findAll(pagination);
-//		List<ClassPlan> classPlan = classPlanMapper.findClass(classId);
+
 		model.addAttribute("classPlan",classPlan);
 
 
-		return "page/planBoard";
+		return "page/classPlan/planBoard";
 	}
 
 
@@ -165,12 +165,12 @@ public class PageController
 		ClassPlan classPlan = classPlanMapper.findOne(planNo);
 		model.addAttribute("classPlan",classPlan);
 
-		return "page/planBody";
+		return "page/classPlan/planBody";
 	}
 
 	//진도계획등록
 	@RequestMapping(value="planRegist", method=RequestMethod.GET)
-	public String planRegist(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+	public String planRegist1(Model model,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
 	{
 
 		if(userType == 1)
@@ -180,18 +180,18 @@ public class PageController
 		}
 		List<Professor> professors= professorMapper.findAll();
 		model.addAttribute("professors",professors);
-		List<Lecture> lectures= lectureMapper.findAll();
+		Lecture lectures= lectureMapper.findOne(classId);
 		model.addAttribute("lectures",lectures);
 
 		model.addAttribute("classPlan",new ClassPlan());
 		model.addAttribute("classId",classId);
 
-		return "page/planRegist";
+		return "page/classPlan/planRegist";
 	}
 
 	//진도계획등록
 		@RequestMapping(value="planRegist", method=RequestMethod.POST)
-		public String planR(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		public String planRegist2(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
 		{
 
 			if(userType == 1)
@@ -204,7 +204,38 @@ public class PageController
 			classPlanMapper.insert(classPlan);
 
 
-			return "page/planBoard";
+			return "redirect:/page/classPlan/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
+		}
+		//진도계획수정
+		@RequestMapping(value="planEdit",method=RequestMethod.GET)
+		public String planEdit(Model model,@RequestParam("planNo") int planNo,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		{
+			if(userType == 1)
+				model.addAttribute("loginInfo",professorMapper.turnOver(id));
+			else
+			   model.addAttribute("loginInfo",studentMapper.turnOver(id));
+			model.addAttribute("classId",classId);
+			ClassPlan classPlan = classPlanMapper.findOne(planNo);
+			model.addAttribute("classPlan",classPlan);
+			return "page/classPlan/planEdit";
+		}
+		//진도계획수정
+		@RequestMapping(value="planEdit",method=RequestMethod.POST)
+		public String planUpdate(Model model,ClassPlan classPlan,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		{
+			model.addAttribute("classId",classId);
+			classPlanMapper.update(classPlan.getTitle(),classPlan.getPlanBody(),classPlan.getPlanNo());
+
+			return "redirect:/page/classPlan/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
+		}
+
+		//진도계획삭제
+		@RequestMapping(value="delete",method=RequestMethod.GET)
+		public String planDelete(Model model,@RequestParam("planNo") int planNo,@RequestParam("classId") int classId,@RequestParam("id") int id, @RequestParam("userType") int userType)
+		{
+			model.addAttribute("classId",classId);
+			classPlanMapper.delete(planNo);
+			return "redirect:/page/classPlan/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
 
 

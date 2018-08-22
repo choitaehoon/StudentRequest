@@ -9,12 +9,20 @@ public class Pagination {
 	int pageSize = 5;
 	int recordCount;
 	int id;
+	int start;
 
 	public int getCurrentPage() {
 		return currentPage;
 	}
 	public void setCurrentPage(int currentPage) {
 		this.currentPage = currentPage;
+	}
+
+	public int getStart() {
+		return start;
+	}
+	public void setStart(int start) {
+		this.start = start;
 	}
 	public int getPageSize() {
 		return pageSize;

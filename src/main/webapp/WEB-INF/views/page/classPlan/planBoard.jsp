@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/page/classPlan.jsp"%>
+<%@ include file="/WEB-INF/views/page/classPlan/classPlan.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -26,24 +26,19 @@
 	margin-top: -200px;
 	margin-left: -150px;
 }
-
 body {
 	font-family: 굴림체;
 }
-
 thead th {
 	background-color: #eee;
 }
-
 tr:hover td {
 	background-color: #ffe;
 	cursor: pointer;
 }
-
 table.table {
 	margin-top: 5px;
 }
-
 select[name=od] {
 	margin-right: 20px;
 }
@@ -55,7 +50,7 @@ select[name=od] {
   			$("input[name=pg]").val($(this).attr("data-page")); 
 //   			$('#loginId').val(); 
   			$("form").submit(); 
-  		}); 
+  		});
   	}); 
 </script> 
 </head>
@@ -63,17 +58,18 @@ select[name=od] {
 	<main>
 	<section>
 	   <form method="get">
+	   <div>
 		<h1>진도 계획 리스트</h1>
 		<h5>
 			<i class="fa fa-paper-plane"></i> <span style="color: blue">
 				${ loginInfo.name } </span>님 안녕하세요
 		</h5>
-		<div class="pull-right">
+		</div>
+		<div >
           <a href="planRegist?classId=${classId }&id=${ loginInfo.id }&userType=${loginInfo.userType}" class="btn btn-info">
-         <span class="glyphicon glyphicon-user"></span> 게시물 등록</a>
-       </div> 
-		<h2>최근 5개 목록</h2>
-		
+           <span class="glyphicon glyphicon-user"></span> 게시물 등록</a>
+         </div>
+
 		<table style="border: 1px solid #ccc">
 			<colgroup>
 				<col width="10%" />
@@ -87,19 +83,19 @@ select[name=od] {
 					<th scope="col">제목</th>
 					<th scope="col">수업이름</th>
 					<th scope="col">교수님 이름</th>
-					<th scope="col">수업날짜</th>
+					<th scope="col">작성일자</th>
 
 				</tr>
 			</thead>
 			<tbody>
 
 				<c:forEach var="classPlan" items="${ classPlan }">
-					<tr data-url="planBody?planNo=${classPlan.planNo}&classId=${classPlan.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}">
+					<tr data-url="planBody?pg=${pagination.currentPage}&planNo=${classPlan.planNo}&classId=${classPlan.classId}&id=${loginInfo.id}&userType=${loginInfo.userType}">
 
 					    <td>${ classPlan.planNo }</td>
 					    <td>${ classPlan.title }</td>
-						<td>${ classPlan.lecture.className}</td>
-						<td>${ classPlan.lecture.professorName }</td>
+						<td>${ classPlan.className}</td>
+						<td>${ classPlan.professorName }</td>
 						<td>${ classPlan.classDate }</td>
 					</tr>
 				</c:forEach>
@@ -107,20 +103,23 @@ select[name=od] {
 
 			</tbody>
 		</table>
-		<a href="classPlan?id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
-				class="glyphicon glyphicon-list"></i> 이전페이지
-			</a>
+		
         <input type="hidden" name="pg" value="1" />
+        <input type="hidden" name="classId" value="${classId }" />
 		<input type="hidden" name="id" id="id" value="${loginInfo.id}">
 		<input type="hidden" name="userType" id="userType" value="${loginInfo.userType}">
 
 			<div class="pagination pagination-small pagination-centered">
-				<ul>
+			
 					<c:forEach var="page" items="${ pagination.pageList }">
 						<li class='${ page.cssClass }'><a
 							data-page="${ page.number }">${ page.label }</a></li>
 					</c:forEach>
-				</ul>
+				
+			</div>
+			<div>
+			<a href="classPlan?id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
+				class="glyphicon glyphicon-list"></i> 이전페이지</a>
 			</div>
        </form>
 	</section>

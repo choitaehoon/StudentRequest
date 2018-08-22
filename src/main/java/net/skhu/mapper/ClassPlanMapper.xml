@@ -3,63 +3,71 @@
              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.skhu.mapper.ClassPlanMapper">
 
-	<select id="findAll" resultType="ClassPlan">
-	   <bind name="start" value="(currentPage-1)*pageSize"/>
-	    <bind name="end" value="pageSize"/>
+	<select id="findAll"  resultType="ClassPlan">
+<!-- 	   <bind name="start" value="(#{pagination.currentPage}-1)*#{pagination.pageSize}"/> -->
+<!-- 	   <bind name="end" value="#{pagination.pageSize}"/> -->
 	 
-		SELECT * FROM classPlan
-		order by planNo desc
-		limit ${start} , ${end}
+		SELECT c.*,l.className,l.professorName
+		FROM classPlan c, lecture l 
+		where c.classId=l.classId
+		order by c.planNo desc
+		limit #{pagination.start} , #{pagination.pageSize}
+<!-- 		LIMIT ${start} , ${end} -->
 		
 	</select>
 
-	<resultMap type="Lecture" id="Lecture">
-	  <result column="professorName" property="professorName"/>
-	  <result column="className" property="className"/>
-	</resultMap>
+<!-- 	<resultMap type="Lecture" id="Lecture"> -->
+<!-- 	  <result column="professorName" property="professorName"/> -->
+<!-- 	  <result column="className" property="className"/> -->
+<!-- 	</resultMap> -->
 	
-	<resultMap type="Pagination" id="Pagination">
-	  <result column="currentPage" property="currentPage"/>
-	  <result column="pageSize" property="pageSize"/>
-	</resultMap>
 	
-	<resultMap type="ClassPlan" id="ClassPlan">
-	 <result column="planNo" property="planNo"/>
-	 <result column="classId" property="classId"/>
-	 <result column="title" property="title"/>
-	 <result column="planBody" property="planBody"/>
-	 <result column="classDate" property="classDate"/>
+<!-- 	<resultMap type="ClassPlan" id="ClassPlan"> -->
+<!-- 	 <result column="planNo" property="planNo"/> -->
+<!-- 	 <result column="classId" property="classId"/> -->
+<!-- 	 <result column="title" property="title"/> -->
+<!-- 	 <result column="planBody" property="planBody"/> -->
+<!-- 	 <result column="classDate" property="classDate"/> -->
 	 
-	  <collection property="lecture" resultMap="Lecture"/>
-	  <collection property="Pagination" resultMap="Pagination"/>
-	</resultMap>
+<!-- 	  <collection property="lecture" resultMap="Lecture"/> -->
+<!-- 	</resultMap> -->
 	
-	<select id="findClass" parameterType="ClassPlan" resultMap="ClassPlan">
-<!-- 	페이지네이션구현중 -->
-	    <bind name="start" value="(currentPage-1)*pageSize"/>
-	    <bind name="end" value="pageSize"/>
-		SELECT c.*,l.professorName,l.className
+	<select id="findClass" resultType="ClassPlan">
+		SELECT c.*,l.className,l.professorName
 		FROM classPlan c, lecture l 
 		where c.classId=l.classId
 		AND c.classId = #{classId}
 		order by c.planNo desc
-		limit ${start} , ${end}
+		limit #{pagination.start} , #{pagination.pageSize}
 	</select>
 	
-	<select id="findOne" parameterType="ClassPlan" resultMap="ClassPlan">
+	<select id="findOne" resultType="ClassPlan">
 		SELECT c.*,l.professorName,l.className
 		FROM classPlan c, lecture l 
 		where c.classId=l.classId
 		AND c.planNo = #{planNo}
 	</select>
 	
+	<update id="update">
+    UPDATE classPlan
+      SET
+          title = #{title},
+          planBody = #{planBody},
+          classDate = NOW()         
+      WHERE planNo = #{planNo}
+   </update>
+	
 	<insert id="insert" >
 		INSERT ClassPlan ( title, classId, planBody, professorId)
 		VALUES (#{title}, #{classId}, #{planBody}, #{professorId})
 	</insert>
 	
+	<delete id="delete">
+		delete from classPlan where planNo = #{planNo}
+	</delete>
+	
 	<select id="count" resultType="int">
-	  select count(*) from classPlan
+	  select count(*) from classPlan where classId=#{classId}
 	</select>
 	
 

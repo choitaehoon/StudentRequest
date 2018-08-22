@@ -33,7 +33,8 @@ body
 </style>
 <title>login</title>
 </head>
-
+<main>
+<section>
 <body>
 	<div id=center class="container main">
 		<H3>SKHU.DO</H3>
@@ -74,7 +75,11 @@ body
 		</form>
 
 		<hr/>
-		
+		<c:if test="${ not empty error }">
+			<div class="alert alert-error"><span style="color:red">${ error }</span></div>
+		</c:if>
 	</div>
 </body>
+</section>
+</main>
 </html>

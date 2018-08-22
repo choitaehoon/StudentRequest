@@ -49,14 +49,18 @@ input.form-control, select.form-control {
 
 <body>
 	<div id=center class="container main">
+		
 		<h1>진도 계획 등록</h1>
+		<h3>${lectures.className}</h3> 
 		<hr />
 		
 		<form:form method="post" modelAttribute="classPlan">
 		    <input type="hidden" name="id" value="${ loginInfo.id }"> 
 			<input type="hidden" name="userType" value="${ loginInfo.userType }">
 			<input type="hidden" name="classId" value="${ classPlan.classId }">
+		    <input type="hidden" name="professorId" value="${ lectures.professor_id }">
 			
+		
 			<div class="form-group">
 				<label>제목</label>
 				<input type="text"  class="form-control" id="title" name="title"/>
@@ -68,22 +72,25 @@ input.form-control, select.form-control {
 				<textarea style="width:400px" rows="10" cols="10" id="planBody" name="planBody"></textarea>
             </div>
             
-            <div class="form-group">
-				<label>교수이름</label>
-				<form:select path="professorId" class="form-control"
-                  itemValue="id" itemLabel="name" items="${ professors }" /> 
-			</div>
+<!--             <div class="form-group"> -->
+<!-- 				<label>교수이름</label> -->
+				
+<%--  				<form:select path="professorId" class="form-control"  --%>
+<%--                 itemValue="id" itemLabel="name" items="${ professors }" /> --%>
+<!-- 			</div> -->
 			
-			<div class="form-group">
-				<label>수업이름</label>
-				<form:select path="classId" class="form-control"
-                itemValue="classId" itemLabel="className" items="${ lectures }" />
-			</div>
+<!-- 			<div class="form-group">  -->
+<!-- 				<label>수업이름</label> -->
+			
+<%--  				<form:select path="classId" class="form-control"  --%>
+<%--                  itemValue="classId" itemLabel="className" items="${ lectures }" /> --%>
+<!--  			</div> -->
  
-           
-			<button type="submit" class="btn btn-primary" >
-				<i class="glyphicon glyphicon-ok"></i> 게시글 등록
+            <button type="submit" class="btn btn-primary">
+				<i class="glyphicon glyphicon-ok"></i> 게시글등록
 			</button>
+<%--            <a href="planBoard?classId=${classId}&id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default" id="submit" > --%>
+<!--            <i class="glyphicon glyphicon-ok"></i> 게시글 등록 </a> -->
 
 			<a href="planBoard?classId=${classId}&id=${loginInfo.id}&userType=${loginInfo.userType}" class="btn btn-default"> <i
 				class="glyphicon glyphicon-list"></i> 목록으로
