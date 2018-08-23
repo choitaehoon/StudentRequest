@@ -204,7 +204,7 @@ public class PageController
 			classPlanMapper.insert(classPlan);
 
 
-			return "redirect:/page/classPlan/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
+			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
 		//진도계획수정
 		@RequestMapping(value="planEdit",method=RequestMethod.GET)
@@ -226,7 +226,7 @@ public class PageController
 			model.addAttribute("classId",classId);
 			classPlanMapper.update(classPlan.getTitle(),classPlan.getPlanBody(),classPlan.getPlanNo());
 
-			return "redirect:/page/classPlan/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
+			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
 
 		//진도계획삭제
@@ -235,7 +235,7 @@ public class PageController
 		{
 			model.addAttribute("classId",classId);
 			classPlanMapper.delete(planNo);
-			return "redirect:/page/classPlan/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
+			return "redirect:/page/planBoard?classId="+classId+"&id="+id+"&userType="+userType;
 		}
 
 
@@ -264,7 +264,7 @@ public class PageController
 
 		return "page/quizQuestion";
 	}
-	
+
 	@RequestMapping("chart")
 	public String chart(Model model, @RequestParam("id") int id, @RequestParam("userType") int userType)
 	{
@@ -272,7 +272,7 @@ public class PageController
 			model.addAttribute("loginInfo",professorMapper.turnOver(id));
 		else
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
-		
+
 		return "page/chart";
 	}
 }
