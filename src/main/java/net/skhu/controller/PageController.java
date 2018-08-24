@@ -273,6 +273,8 @@ public class PageController
 		else
 		   model.addAttribute("loginInfo",studentMapper.turnOver(id));
 
+		int count =2;
+		model.addAttribute("count",count);
 		return "page/chart";
 	}
 }

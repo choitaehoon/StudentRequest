@@ -11,14 +11,22 @@
       google.charts.setOnLoadCallback(drawVisualization);
 
       function drawVisualization() {
-        // Some raw data (not necessarily accurate)
+        	var todayDate = new Array();
+        	for(let i=0; i<5; ++i)
+        	{
+        		var today = new Date();
+            	var dd = today.getDate()-i;
+            	var mm = today.getMonth()+1;
+            	var yyyy = today.getFullYear();
+            	todayDate[i] = yyyy+'-'+mm+'-'+dd
+        	}
         var data = google.visualization.arrayToDataTable([
          ['Month', '내점수', '평균'],
-         ['2004/05',  85,      52],
-         ['2005/06',  77,      40],
-         ['2006/07',  55,      55],
-         ['2007/08',  27,      29],
-         ['2008/09',  100,      70]
+         [todayDate[0],  90,   52],
+         [todayDate[1],  71,      49],
+         [todayDate[2],  89,      77],
+         [todayDate[3],  95,      47],
+         [todayDate[4],  84,      63]
       ]);
 
     var options = {
