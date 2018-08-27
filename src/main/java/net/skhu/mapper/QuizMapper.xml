@@ -7,6 +7,7 @@
 	<bind name="start" value="(currentPage-1)*pageSize"/>
 	<bind name="end" value="pageSize"/>
 	select * from quiz
+	order by quizId desc
 	limit ${start} , ${end}
 	</select>
 	
