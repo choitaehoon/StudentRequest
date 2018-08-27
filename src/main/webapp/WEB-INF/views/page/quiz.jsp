@@ -73,6 +73,7 @@ float:left;
 		<table class="table table-bordered table-condensed">
 			<thead>
 				<tr>
+					<th>${sum}</th>
 					<th>풀었던 번호</th>
 					<th>퀴즈 내용</th>
 					<th>퀴즈 본 날짜</th>

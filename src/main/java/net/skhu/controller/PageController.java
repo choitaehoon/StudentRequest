@@ -15,6 +15,7 @@ import net.skhu.mapper.LectureMapper;
 import net.skhu.mapper.ProfessorMapper;
 import net.skhu.mapper.QuizMapper;
 import net.skhu.mapper.StudentMapper;
+import net.skhu.service.Reckoning;
 import net.student.dto.ClassPlan;
 import net.student.dto.Lecture;
 import net.student.dto.LoginInfo;
@@ -36,6 +37,8 @@ public class PageController
 	private ClassPlanMapper classPlanMapper;
 	@Autowired
 	private QuizMapper quizMapper;
+	@Autowired
+	private Reckoning reckoning;
 
 	@RequestMapping(value="check", method=RequestMethod.POST)
 	public String test(Model model, @ModelAttribute("LoginInfo") LoginInfo loginInfo)
