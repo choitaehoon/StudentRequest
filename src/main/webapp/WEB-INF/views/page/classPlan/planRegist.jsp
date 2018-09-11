@@ -63,13 +63,13 @@ input.form-control, select.form-control {
 		
 			<div class="form-group">
 				<label>제목</label>
-				<input type="text"  class="form-control" id="title" name="title"/>
+				<input type="text"  class="form-control" id="title" name="title" placeholder="글제목"/>
 			</div>
 			
 			<label>내용</label> 
 			<div class="form-group">
 				
-				<textarea style="width:400px" rows="10" cols="10" id="planBody" name="planBody"></textarea>
+				<textarea style="width:400px" rows="10" cols="10" id="planBody" name="planBody" placeholder="내용입력"></textarea>
             </div>
             
 <!--             <div class="form-group"> -->
